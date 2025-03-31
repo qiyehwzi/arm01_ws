@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: tjurm_arm_final
+    relative_path: urdf/tjurm_arm_final.urdf
+    xacro_args: ""
+  SRDF:
+    relative_path: config/tjurm_arm_final.srdf
+  CONFIG:
+    author_name: qiyehwzi
+    author_email: 490891994@qq.com
+    generated_timestamp: 1743402438

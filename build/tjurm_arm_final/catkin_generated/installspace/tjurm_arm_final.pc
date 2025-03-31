@@ -1,0 +1,8 @@
+prefix=/home/tjurm/arm01_ws/install
+
+Name: tjurm_arm_final
+Description: Description of tjurm_arm_final
+Version: 1.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
