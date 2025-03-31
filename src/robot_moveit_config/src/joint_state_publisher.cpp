@@ -15,7 +15,7 @@
 
 serial::Serial sp;  //创建一个serial类
 sensor_msgs::JointState joint_state;    // 定义关节状态消息
-uint8_t rx_buffer[24];
+uint8_t rx_buffer[29];
 uint8_t tx_buffer[24];
 float rx_buffer_float[6];
 float tx_buffer_float[6];
@@ -29,10 +29,20 @@ typedef struct
 } send_msg_t;
 #pragma pack()
 
+#pragma pack(1)
+typedef struct 
+{
+  uint8_t sof;
+  float tra[6];
+  uint8_t tailer;
+} receive_msg_t;
+#pragma pack()
+
 #define LEN_TX_PACKET 29
 uint8_t PC_SEND_BUF[LEN_TX_PACKET+1];
 
 send_msg_t send_msg;
+receive_msg_t receive_msg;
 
 void serial_init();
 
@@ -162,7 +172,7 @@ int main(int argc, char *argv[]) {
                     // sp.write(buffer.data(), buffer.size());
                     // }
 
-                    for(int i=0;i<n_tra_Points;i+=10)
+                    for(int i=0;i<n_tra_Points;i+=5)
                     {
                         ros::Time start_time = ros::Time::now();
                         ros::Duration execute_time(0.01);
@@ -198,41 +208,67 @@ int main(int argc, char *argv[]) {
         // ROS_INFO("Sent %zu bytes of trajectory data", buffer.size());
     
 
-        // //获取缓冲区内的字节数
+        //获取缓冲区内的字节数
         // size_t n = sp.available();
         // if(n!=0)
         // {
         //     //读出数据
         //     n = sp.read(rx_buffer, n)/4;
-            
-        //     tx_buffer_float[0] = 3.1415;
-        //     tx_buffer_float[1] = 2.4287;
-        //     tx_buffer_float[2] = 2.71828;
-        //     tx_buffer_float[3] = 0.983;
-        //     tx_buffer_float[4] = 1.895;
-        //     tx_buffer_float[5] = 1.895;
-            
-        //     memcpy(rx_buffer_float,rx_buffer,sizeof(rx_buffer));
-        //     memcpy(tx_buffer,tx_buffer_float,sizeof(tx_buffer_float));
-            
-        //     for(int i=0; i<n; i++)
-        //     {
-        //         // std::cout << std::hex << (rx_buffer[i] & 0xff) << " ";
-        //         std::cout << (rx_buffer_float[i]) << " ";
-        //     }
-        //     std::cout << std::endl;
-        //     //把数据发送回去
-        //     // sp.write(rx_buffer, n*4);
-        //     sp.write(tx_buffer, 24);
-        // }
         
-        for (int i = 0; i < 6; ++i) {
-            //模拟关节角度
-            //joint_state.position[i] = static_cast<double>(rand()) / RAND_MAX * 2.0 - 1.0;  // 随机角度 [-1, 1]
+            
+            // memcpy(receive_msg.tra,rx_buffer+1,sizeof(rx_buffer));
 
+            // 修改接收部分的代码
+    // if(n >= sizeof(receive_msg))
+    // { // 确保收到完整的一帧
+    //     if(rx_buffer[0] == 0x69 && rx_buffer[sizeof(receive_msg)-1] == 0x65) 
+    //     {
+    //         memcpy(&receive_msg, rx_buffer, sizeof(receive_msg));
+    //         // 现在可以正确访问receive_msg.tra数组
+    //     } 
+    //     else
+    //     {
+    //         ROS_WARN("Frame header or tailer mismatch!");
+    //     }
+    // }
+            
+    //         for(int i=0; i<n; i++)
+    //         {
+    //             // std::cout << std::hex << (rx_buffer[i] & 0xff) << " ";
+    //             std::cout << (receive_msg.tra[i]) << " ";
+    //         }
+
+    //      }
+        
+    //     for (int i = 0; i < 6; ++i) {
+    //         //模拟关节角度
+    //         //joint_state.position[i] = static_cast<double>(rand()) / RAND_MAX * 2.0 - 1.0;  // 随机角度 [-1, 1]
+
+    //         //stm32 publish real angle
+    //         joint_state.position[i] = receive_msg.tra[i];
+    //         // std::cout << rx_buffer_float[i] << " ";
+    //     }
+
+        size_t n = sp.available();
+        if (n >= sizeof(receive_msg)) 
+        {
+            sp.read(rx_buffer, sizeof(receive_msg)); // 严格读取一帧长度
+            if (rx_buffer[0] == 0x69 && rx_buffer[sizeof(receive_msg)-1] == 0x65) {
+                memcpy(&receive_msg, rx_buffer, sizeof(receive_msg));
+                // 打印调试信息
+                ROS_INFO("Received: %.2f, %.2f, %.2f, %.2f, %.2f, %.2f", 
+                        receive_msg.tra[0], receive_msg.tra[1], 
+                        receive_msg.tra[2], receive_msg.tra[3],
+                        receive_msg.tra[4], receive_msg.tra[5]);
+            } else {
+                ROS_WARN("Frame header/tailer mismatch!");
+                sp.flushInput(); // 清空错误数据
+            }
+        }
+
+        for (int i = 0; i < 6; ++i) {
             //stm32 publish real angle
-            joint_state.position[i] = rx_buffer_float[i];
-            // std::cout << rx_buffer_float[i] << " ";
+            joint_state.position[i] = receive_msg.tra[i];
         }
 
         // 填充时间戳
