@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/tjurm/arm01_ws/src/robot_moveit_config/src/joint_state_publisher.cpp
+/home/tjurm/arm01_ws/src/robot_moveit_config/src/serial_sender.cpp
 ros/ros.h
 -
 serial/serial.h

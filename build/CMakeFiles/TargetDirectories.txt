@@ -48,6 +48,8 @@
 /home/tjurm/arm01_ws/build/robot_moveit_config/CMakeFiles/install.dir
 /home/tjurm/arm01_ws/build/robot_moveit_config/CMakeFiles/list_install_components.dir
 /home/tjurm/arm01_ws/build/robot_moveit_config/CMakeFiles/test.dir
+/home/tjurm/arm01_ws/build/robot_moveit_config/CMakeFiles/serial_sender.dir
+/home/tjurm/arm01_ws/build/robot_moveit_config/CMakeFiles/serial_receiver.dir
 /home/tjurm/arm01_ws/build/robot_moveit_config/CMakeFiles/std_srvs_generate_messages_nodejs.dir
 /home/tjurm/arm01_ws/build/robot_moveit_config/CMakeFiles/std_srvs_generate_messages_lisp.dir
 /home/tjurm/arm01_ws/build/robot_moveit_config/CMakeFiles/std_srvs_generate_messages_eus.dir
@@ -111,7 +113,6 @@
 /home/tjurm/arm01_ws/build/robot_moveit_config/CMakeFiles/shape_msgs_generate_messages_py.dir
 /home/tjurm/arm01_ws/build/robot_moveit_config/CMakeFiles/geometry_msgs_generate_messages_cpp.dir
 /home/tjurm/arm01_ws/build/robot_moveit_config/CMakeFiles/visualization_msgs_generate_messages_eus.dir
-/home/tjurm/arm01_ws/build/robot_moveit_config/CMakeFiles/joint_state_publisher.dir
 /home/tjurm/arm01_ws/build/robot_moveit_config/CMakeFiles/moveit_msgs_generate_messages_py.dir
 /home/tjurm/arm01_ws/build/robot_moveit_config/CMakeFiles/object_recognition_msgs_generate_messages_lisp.dir
 /home/tjurm/arm01_ws/build/robot_moveit_config/CMakeFiles/geometry_msgs_generate_messages_lisp.dir

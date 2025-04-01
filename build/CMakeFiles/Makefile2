@@ -139,7 +139,8 @@ gtest/googletest/clean: gtest/googletest/CMakeFiles/gtest.dir/clean
 # Directory level rules for directory robot_moveit_config
 
 # Recursive "all" directory target.
-robot_moveit_config/all: robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all
+robot_moveit_config/all: robot_moveit_config/CMakeFiles/serial_sender.dir/all
+robot_moveit_config/all: robot_moveit_config/CMakeFiles/serial_receiver.dir/all
 
 .PHONY : robot_moveit_config/all
 
@@ -149,6 +150,8 @@ robot_moveit_config/preinstall:
 .PHONY : robot_moveit_config/preinstall
 
 # Recursive "clean" directory target.
+robot_moveit_config/clean: robot_moveit_config/CMakeFiles/serial_sender.dir/clean
+robot_moveit_config/clean: robot_moveit_config/CMakeFiles/serial_receiver.dir/clean
 robot_moveit_config/clean: robot_moveit_config/CMakeFiles/std_srvs_generate_messages_nodejs.dir/clean
 robot_moveit_config/clean: robot_moveit_config/CMakeFiles/std_srvs_generate_messages_lisp.dir/clean
 robot_moveit_config/clean: robot_moveit_config/CMakeFiles/std_srvs_generate_messages_eus.dir/clean
@@ -211,7 +214,6 @@ robot_moveit_config/clean: robot_moveit_config/CMakeFiles/rosgraph_msgs_generate
 robot_moveit_config/clean: robot_moveit_config/CMakeFiles/shape_msgs_generate_messages_py.dir/clean
 robot_moveit_config/clean: robot_moveit_config/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/clean
 robot_moveit_config/clean: robot_moveit_config/CMakeFiles/visualization_msgs_generate_messages_eus.dir/clean
-robot_moveit_config/clean: robot_moveit_config/CMakeFiles/joint_state_publisher.dir/clean
 robot_moveit_config/clean: robot_moveit_config/CMakeFiles/moveit_msgs_generate_messages_py.dir/clean
 robot_moveit_config/clean: robot_moveit_config/CMakeFiles/object_recognition_msgs_generate_messages_lisp.dir/clean
 robot_moveit_config/clean: robot_moveit_config/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/clean
@@ -529,6 +531,147 @@ _catkin_empty_exported_target: tjurm_arm_final/CMakeFiles/_catkin_empty_exported
 tjurm_arm_final/CMakeFiles/_catkin_empty_exported_target.dir/clean:
 	$(MAKE) -f tjurm_arm_final/CMakeFiles/_catkin_empty_exported_target.dir/build.make tjurm_arm_final/CMakeFiles/_catkin_empty_exported_target.dir/clean
 .PHONY : tjurm_arm_final/CMakeFiles/_catkin_empty_exported_target.dir/clean
+
+#=============================================================================
+# Target rules for target robot_moveit_config/CMakeFiles/serial_sender.dir
+
+# All Build rule for target.
+robot_moveit_config/CMakeFiles/serial_sender.dir/all:
+	$(MAKE) -f robot_moveit_config/CMakeFiles/serial_sender.dir/build.make robot_moveit_config/CMakeFiles/serial_sender.dir/depend
+	$(MAKE) -f robot_moveit_config/CMakeFiles/serial_sender.dir/build.make robot_moveit_config/CMakeFiles/serial_sender.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/tjurm/arm01_ws/build/CMakeFiles --progress-num=11,12 "Built target serial_sender"
+.PHONY : robot_moveit_config/CMakeFiles/serial_sender.dir/all
+
+# Build rule for subdir invocation for target.
+robot_moveit_config/CMakeFiles/serial_sender.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/tjurm/arm01_ws/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 robot_moveit_config/CMakeFiles/serial_sender.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/tjurm/arm01_ws/build/CMakeFiles 0
+.PHONY : robot_moveit_config/CMakeFiles/serial_sender.dir/rule
+
+# Convenience name for target.
+serial_sender: robot_moveit_config/CMakeFiles/serial_sender.dir/rule
+
+.PHONY : serial_sender
+
+# clean rule for target.
+robot_moveit_config/CMakeFiles/serial_sender.dir/clean:
+	$(MAKE) -f robot_moveit_config/CMakeFiles/serial_sender.dir/build.make robot_moveit_config/CMakeFiles/serial_sender.dir/clean
+.PHONY : robot_moveit_config/CMakeFiles/serial_sender.dir/clean
+
+#=============================================================================
+# Target rules for target robot_moveit_config/CMakeFiles/serial_receiver.dir
+
+# All Build rule for target.
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/std_srvs_generate_messages_nodejs.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/std_srvs_generate_messages_lisp.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/std_srvs_generate_messages_eus.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/std_srvs_generate_messages_cpp.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/tf_generate_messages_nodejs.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/tf_generate_messages_lisp.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/tf_generate_messages_cpp.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/dynamic_reconfigure_gencfg.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/tf2_msgs_generate_messages_py.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/octomap_msgs_generate_messages_py.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/octomap_msgs_generate_messages_nodejs.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/octomap_msgs_generate_messages_lisp.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/octomap_msgs_generate_messages_cpp.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/shape_msgs_generate_messages_eus.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/actionlib_msgs_generate_messages_py.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/actionlib_generate_messages_cpp.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/object_recognition_msgs_generate_messages_py.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/actionlib_generate_messages_nodejs.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/moveit_ros_manipulation_gencfg.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/shape_msgs_generate_messages_cpp.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/actionlib_generate_messages_lisp.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/roscpp_generate_messages_lisp.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/octomap_msgs_generate_messages_eus.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/object_recognition_msgs_generate_messages_cpp.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/std_msgs_generate_messages_py.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/geometry_msgs_generate_messages_eus.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/roscpp_generate_messages_cpp.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/roscpp_generate_messages_eus.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/moveit_msgs_generate_messages_lisp.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/roscpp_generate_messages_py.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/roscpp_generate_messages_nodejs.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/actionlib_generate_messages_py.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/tf_generate_messages_py.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/std_msgs_generate_messages_eus.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/std_srvs_generate_messages_py.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/moveit_ros_planning_gencfg.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/tf_generate_messages_eus.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/shape_msgs_generate_messages_nodejs.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/shape_msgs_generate_messages_py.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/visualization_msgs_generate_messages_eus.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/moveit_msgs_generate_messages_py.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/object_recognition_msgs_generate_messages_lisp.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/dynamic_reconfigure_generate_messages_eus.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/geometry_msgs_generate_messages_py.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/moveit_msgs_generate_messages_eus.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/tf2_msgs_generate_messages_eus.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/sensor_msgs_generate_messages_py.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/actionlib_generate_messages_eus.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/trajectory_msgs_generate_messages_py.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/visualization_msgs_generate_messages_py.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/moveit_msgs_generate_messages_cpp.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/moveit_msgs_generate_messages_nodejs.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/shape_msgs_generate_messages_lisp.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/object_recognition_msgs_generate_messages_eus.dir/all
+robot_moveit_config/CMakeFiles/serial_receiver.dir/all: robot_moveit_config/CMakeFiles/object_recognition_msgs_generate_messages_nodejs.dir/all
+	$(MAKE) -f robot_moveit_config/CMakeFiles/serial_receiver.dir/build.make robot_moveit_config/CMakeFiles/serial_receiver.dir/depend
+	$(MAKE) -f robot_moveit_config/CMakeFiles/serial_receiver.dir/build.make robot_moveit_config/CMakeFiles/serial_receiver.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/tjurm/arm01_ws/build/CMakeFiles --progress-num=9,10 "Built target serial_receiver"
+.PHONY : robot_moveit_config/CMakeFiles/serial_receiver.dir/all
+
+# Build rule for subdir invocation for target.
+robot_moveit_config/CMakeFiles/serial_receiver.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/tjurm/arm01_ws/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 robot_moveit_config/CMakeFiles/serial_receiver.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/tjurm/arm01_ws/build/CMakeFiles 0
+.PHONY : robot_moveit_config/CMakeFiles/serial_receiver.dir/rule
+
+# Convenience name for target.
+serial_receiver: robot_moveit_config/CMakeFiles/serial_receiver.dir/rule
+
+.PHONY : serial_receiver
+
+# clean rule for target.
+robot_moveit_config/CMakeFiles/serial_receiver.dir/clean:
+	$(MAKE) -f robot_moveit_config/CMakeFiles/serial_receiver.dir/build.make robot_moveit_config/CMakeFiles/serial_receiver.dir/clean
+.PHONY : robot_moveit_config/CMakeFiles/serial_receiver.dir/clean
 
 #=============================================================================
 # Target rules for target robot_moveit_config/CMakeFiles/std_srvs_generate_messages_nodejs.dir
@@ -2203,120 +2346,6 @@ visualization_msgs_generate_messages_eus: robot_moveit_config/CMakeFiles/visuali
 robot_moveit_config/CMakeFiles/visualization_msgs_generate_messages_eus.dir/clean:
 	$(MAKE) -f robot_moveit_config/CMakeFiles/visualization_msgs_generate_messages_eus.dir/build.make robot_moveit_config/CMakeFiles/visualization_msgs_generate_messages_eus.dir/clean
 .PHONY : robot_moveit_config/CMakeFiles/visualization_msgs_generate_messages_eus.dir/clean
-
-#=============================================================================
-# Target rules for target robot_moveit_config/CMakeFiles/joint_state_publisher.dir
-
-# All Build rule for target.
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/std_srvs_generate_messages_nodejs.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/std_srvs_generate_messages_lisp.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/std_srvs_generate_messages_eus.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/std_srvs_generate_messages_cpp.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/tf_generate_messages_nodejs.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/tf_generate_messages_lisp.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/tf_generate_messages_cpp.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/dynamic_reconfigure_gencfg.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/tf2_msgs_generate_messages_py.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/octomap_msgs_generate_messages_py.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/octomap_msgs_generate_messages_nodejs.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/octomap_msgs_generate_messages_lisp.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/octomap_msgs_generate_messages_cpp.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/shape_msgs_generate_messages_eus.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/actionlib_msgs_generate_messages_py.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/actionlib_generate_messages_cpp.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/object_recognition_msgs_generate_messages_py.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/actionlib_generate_messages_nodejs.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/moveit_ros_manipulation_gencfg.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/shape_msgs_generate_messages_cpp.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/actionlib_generate_messages_lisp.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/roscpp_generate_messages_lisp.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/octomap_msgs_generate_messages_eus.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/object_recognition_msgs_generate_messages_cpp.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/std_msgs_generate_messages_py.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/geometry_msgs_generate_messages_eus.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/roscpp_generate_messages_cpp.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/roscpp_generate_messages_eus.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/moveit_msgs_generate_messages_lisp.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/roscpp_generate_messages_py.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/roscpp_generate_messages_nodejs.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/actionlib_generate_messages_py.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/tf_generate_messages_py.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/std_msgs_generate_messages_eus.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/std_srvs_generate_messages_py.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/moveit_ros_planning_gencfg.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/tf_generate_messages_eus.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/shape_msgs_generate_messages_nodejs.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/shape_msgs_generate_messages_py.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/visualization_msgs_generate_messages_eus.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/moveit_msgs_generate_messages_py.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/object_recognition_msgs_generate_messages_lisp.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/dynamic_reconfigure_generate_messages_eus.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/geometry_msgs_generate_messages_py.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/moveit_msgs_generate_messages_eus.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/tf2_msgs_generate_messages_eus.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/sensor_msgs_generate_messages_py.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/actionlib_generate_messages_eus.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/trajectory_msgs_generate_messages_py.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/visualization_msgs_generate_messages_py.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/moveit_msgs_generate_messages_cpp.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/moveit_msgs_generate_messages_nodejs.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/shape_msgs_generate_messages_lisp.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/object_recognition_msgs_generate_messages_eus.dir/all
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all: robot_moveit_config/CMakeFiles/object_recognition_msgs_generate_messages_nodejs.dir/all
-	$(MAKE) -f robot_moveit_config/CMakeFiles/joint_state_publisher.dir/build.make robot_moveit_config/CMakeFiles/joint_state_publisher.dir/depend
-	$(MAKE) -f robot_moveit_config/CMakeFiles/joint_state_publisher.dir/build.make robot_moveit_config/CMakeFiles/joint_state_publisher.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/tjurm/arm01_ws/build/CMakeFiles --progress-num=9,10 "Built target joint_state_publisher"
-.PHONY : robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all
-
-# Build rule for subdir invocation for target.
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/tjurm/arm01_ws/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 robot_moveit_config/CMakeFiles/joint_state_publisher.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/tjurm/arm01_ws/build/CMakeFiles 0
-.PHONY : robot_moveit_config/CMakeFiles/joint_state_publisher.dir/rule
-
-# Convenience name for target.
-joint_state_publisher: robot_moveit_config/CMakeFiles/joint_state_publisher.dir/rule
-
-.PHONY : joint_state_publisher
-
-# clean rule for target.
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/clean:
-	$(MAKE) -f robot_moveit_config/CMakeFiles/joint_state_publisher.dir/build.make robot_moveit_config/CMakeFiles/joint_state_publisher.dir/clean
-.PHONY : robot_moveit_config/CMakeFiles/joint_state_publisher.dir/clean
 
 #=============================================================================
 # Target rules for target robot_moveit_config/CMakeFiles/moveit_msgs_generate_messages_py.dir

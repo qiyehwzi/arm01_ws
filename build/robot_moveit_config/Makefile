@@ -168,6 +168,36 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+robot_moveit_config/CMakeFiles/serial_sender.dir/rule:
+	cd /home/tjurm/arm01_ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot_moveit_config/CMakeFiles/serial_sender.dir/rule
+.PHONY : robot_moveit_config/CMakeFiles/serial_sender.dir/rule
+
+# Convenience name for target.
+serial_sender: robot_moveit_config/CMakeFiles/serial_sender.dir/rule
+
+.PHONY : serial_sender
+
+# fast build rule for target.
+serial_sender/fast:
+	cd /home/tjurm/arm01_ws/build && $(MAKE) -f robot_moveit_config/CMakeFiles/serial_sender.dir/build.make robot_moveit_config/CMakeFiles/serial_sender.dir/build
+.PHONY : serial_sender/fast
+
+# Convenience name for target.
+robot_moveit_config/CMakeFiles/serial_receiver.dir/rule:
+	cd /home/tjurm/arm01_ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot_moveit_config/CMakeFiles/serial_receiver.dir/rule
+.PHONY : robot_moveit_config/CMakeFiles/serial_receiver.dir/rule
+
+# Convenience name for target.
+serial_receiver: robot_moveit_config/CMakeFiles/serial_receiver.dir/rule
+
+.PHONY : serial_receiver
+
+# fast build rule for target.
+serial_receiver/fast:
+	cd /home/tjurm/arm01_ws/build && $(MAKE) -f robot_moveit_config/CMakeFiles/serial_receiver.dir/build.make robot_moveit_config/CMakeFiles/serial_receiver.dir/build
+.PHONY : serial_receiver/fast
+
+# Convenience name for target.
 robot_moveit_config/CMakeFiles/std_srvs_generate_messages_nodejs.dir/rule:
 	cd /home/tjurm/arm01_ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot_moveit_config/CMakeFiles/std_srvs_generate_messages_nodejs.dir/rule
 .PHONY : robot_moveit_config/CMakeFiles/std_srvs_generate_messages_nodejs.dir/rule
@@ -1098,21 +1128,6 @@ visualization_msgs_generate_messages_eus/fast:
 .PHONY : visualization_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
-robot_moveit_config/CMakeFiles/joint_state_publisher.dir/rule:
-	cd /home/tjurm/arm01_ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot_moveit_config/CMakeFiles/joint_state_publisher.dir/rule
-.PHONY : robot_moveit_config/CMakeFiles/joint_state_publisher.dir/rule
-
-# Convenience name for target.
-joint_state_publisher: robot_moveit_config/CMakeFiles/joint_state_publisher.dir/rule
-
-.PHONY : joint_state_publisher
-
-# fast build rule for target.
-joint_state_publisher/fast:
-	cd /home/tjurm/arm01_ws/build && $(MAKE) -f robot_moveit_config/CMakeFiles/joint_state_publisher.dir/build.make robot_moveit_config/CMakeFiles/joint_state_publisher.dir/build
-.PHONY : joint_state_publisher/fast
-
-# Convenience name for target.
 robot_moveit_config/CMakeFiles/moveit_msgs_generate_messages_py.dir/rule:
 	cd /home/tjurm/arm01_ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot_moveit_config/CMakeFiles/moveit_msgs_generate_messages_py.dir/rule
 .PHONY : robot_moveit_config/CMakeFiles/moveit_msgs_generate_messages_py.dir/rule
@@ -1502,32 +1517,59 @@ object_recognition_msgs_generate_messages_nodejs/fast:
 	cd /home/tjurm/arm01_ws/build && $(MAKE) -f robot_moveit_config/CMakeFiles/object_recognition_msgs_generate_messages_nodejs.dir/build.make robot_moveit_config/CMakeFiles/object_recognition_msgs_generate_messages_nodejs.dir/build
 .PHONY : object_recognition_msgs_generate_messages_nodejs/fast
 
-src/joint_state_publisher.o: src/joint_state_publisher.cpp.o
+src/serial_receiver.o: src/serial_receiver.cpp.o
 
-.PHONY : src/joint_state_publisher.o
+.PHONY : src/serial_receiver.o
 
 # target to build an object file
-src/joint_state_publisher.cpp.o:
-	cd /home/tjurm/arm01_ws/build && $(MAKE) -f robot_moveit_config/CMakeFiles/joint_state_publisher.dir/build.make robot_moveit_config/CMakeFiles/joint_state_publisher.dir/src/joint_state_publisher.cpp.o
-.PHONY : src/joint_state_publisher.cpp.o
+src/serial_receiver.cpp.o:
+	cd /home/tjurm/arm01_ws/build && $(MAKE) -f robot_moveit_config/CMakeFiles/serial_receiver.dir/build.make robot_moveit_config/CMakeFiles/serial_receiver.dir/src/serial_receiver.cpp.o
+.PHONY : src/serial_receiver.cpp.o
 
-src/joint_state_publisher.i: src/joint_state_publisher.cpp.i
+src/serial_receiver.i: src/serial_receiver.cpp.i
 
-.PHONY : src/joint_state_publisher.i
+.PHONY : src/serial_receiver.i
 
 # target to preprocess a source file
-src/joint_state_publisher.cpp.i:
-	cd /home/tjurm/arm01_ws/build && $(MAKE) -f robot_moveit_config/CMakeFiles/joint_state_publisher.dir/build.make robot_moveit_config/CMakeFiles/joint_state_publisher.dir/src/joint_state_publisher.cpp.i
-.PHONY : src/joint_state_publisher.cpp.i
+src/serial_receiver.cpp.i:
+	cd /home/tjurm/arm01_ws/build && $(MAKE) -f robot_moveit_config/CMakeFiles/serial_receiver.dir/build.make robot_moveit_config/CMakeFiles/serial_receiver.dir/src/serial_receiver.cpp.i
+.PHONY : src/serial_receiver.cpp.i
 
-src/joint_state_publisher.s: src/joint_state_publisher.cpp.s
+src/serial_receiver.s: src/serial_receiver.cpp.s
 
-.PHONY : src/joint_state_publisher.s
+.PHONY : src/serial_receiver.s
 
 # target to generate assembly for a file
-src/joint_state_publisher.cpp.s:
-	cd /home/tjurm/arm01_ws/build && $(MAKE) -f robot_moveit_config/CMakeFiles/joint_state_publisher.dir/build.make robot_moveit_config/CMakeFiles/joint_state_publisher.dir/src/joint_state_publisher.cpp.s
-.PHONY : src/joint_state_publisher.cpp.s
+src/serial_receiver.cpp.s:
+	cd /home/tjurm/arm01_ws/build && $(MAKE) -f robot_moveit_config/CMakeFiles/serial_receiver.dir/build.make robot_moveit_config/CMakeFiles/serial_receiver.dir/src/serial_receiver.cpp.s
+.PHONY : src/serial_receiver.cpp.s
+
+src/serial_sender.o: src/serial_sender.cpp.o
+
+.PHONY : src/serial_sender.o
+
+# target to build an object file
+src/serial_sender.cpp.o:
+	cd /home/tjurm/arm01_ws/build && $(MAKE) -f robot_moveit_config/CMakeFiles/serial_sender.dir/build.make robot_moveit_config/CMakeFiles/serial_sender.dir/src/serial_sender.cpp.o
+.PHONY : src/serial_sender.cpp.o
+
+src/serial_sender.i: src/serial_sender.cpp.i
+
+.PHONY : src/serial_sender.i
+
+# target to preprocess a source file
+src/serial_sender.cpp.i:
+	cd /home/tjurm/arm01_ws/build && $(MAKE) -f robot_moveit_config/CMakeFiles/serial_sender.dir/build.make robot_moveit_config/CMakeFiles/serial_sender.dir/src/serial_sender.cpp.i
+.PHONY : src/serial_sender.cpp.i
+
+src/serial_sender.s: src/serial_sender.cpp.s
+
+.PHONY : src/serial_sender.s
+
+# target to generate assembly for a file
+src/serial_sender.cpp.s:
+	cd /home/tjurm/arm01_ws/build && $(MAKE) -f robot_moveit_config/CMakeFiles/serial_sender.dir/build.make robot_moveit_config/CMakeFiles/serial_sender.dir/src/serial_sender.cpp.s
+.PHONY : src/serial_sender.cpp.s
 
 # Help Target
 help:
@@ -1540,6 +1582,8 @@ help:
 	@echo "... install"
 	@echo "... list_install_components"
 	@echo "... test"
+	@echo "... serial_sender"
+	@echo "... serial_receiver"
 	@echo "... std_srvs_generate_messages_nodejs"
 	@echo "... std_srvs_generate_messages_lisp"
 	@echo "... std_srvs_generate_messages_eus"
@@ -1603,7 +1647,6 @@ help:
 	@echo "... shape_msgs_generate_messages_py"
 	@echo "... geometry_msgs_generate_messages_cpp"
 	@echo "... visualization_msgs_generate_messages_eus"
-	@echo "... joint_state_publisher"
 	@echo "... moveit_msgs_generate_messages_py"
 	@echo "... object_recognition_msgs_generate_messages_lisp"
 	@echo "... geometry_msgs_generate_messages_lisp"
@@ -1631,9 +1674,12 @@ help:
 	@echo "... trajectory_msgs_generate_messages_lisp"
 	@echo "... object_recognition_msgs_generate_messages_eus"
 	@echo "... object_recognition_msgs_generate_messages_nodejs"
-	@echo "... src/joint_state_publisher.o"
-	@echo "... src/joint_state_publisher.i"
-	@echo "... src/joint_state_publisher.s"
+	@echo "... src/serial_receiver.o"
+	@echo "... src/serial_receiver.i"
+	@echo "... src/serial_receiver.s"
+	@echo "... src/serial_sender.o"
+	@echo "... src/serial_sender.i"
+	@echo "... src/serial_sender.s"
 .PHONY : help
 
 

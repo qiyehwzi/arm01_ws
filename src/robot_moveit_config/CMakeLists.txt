@@ -29,7 +29,10 @@ install(DIRECTORY launch DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
   PATTERN "setup_assistant.launch" EXCLUDE)
 install(DIRECTORY config DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
 
-add_executable(joint_state_publisher src/joint_state_publisher.cpp)
-target_link_libraries(joint_state_publisher ${catkin_LIBRARIES})
-add_dependencies(joint_state_publisher ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+add_executable(serial_receiver src/serial_receiver.cpp)
+target_link_libraries(serial_receiver ${catkin_LIBRARIES})
+add_dependencies(serial_receiver ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+
+add_executable(serial_sender src/serial_sender.cpp)
+target_link_libraries(serial_sender ${catkin_LIBRARIES})
 

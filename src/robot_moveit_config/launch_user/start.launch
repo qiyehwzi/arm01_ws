@@ -1,0 +1,15 @@
+<launch>
+    <node name="serial_sender" 
+          pkg="robot_moveit_config" 
+          type="serial_sender" 
+          output="screen"/>
+    
+    <node name="serial_receiver" 
+          pkg="robot_moveit_config" 
+          type="serial_receiver" 
+          output="screen"/>
+
+    <include file="$(find robot_moveit_config)/launch/demo.launch">
+    </include>
+    
+</launch>

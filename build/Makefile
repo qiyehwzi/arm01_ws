@@ -298,6 +298,32 @@ _catkin_empty_exported_target/fast:
 .PHONY : _catkin_empty_exported_target/fast
 
 #=============================================================================
+# Target rules for targets named serial_sender
+
+# Build rule for target.
+serial_sender: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 serial_sender
+.PHONY : serial_sender
+
+# fast build rule for target.
+serial_sender/fast:
+	$(MAKE) -f robot_moveit_config/CMakeFiles/serial_sender.dir/build.make robot_moveit_config/CMakeFiles/serial_sender.dir/build
+.PHONY : serial_sender/fast
+
+#=============================================================================
+# Target rules for targets named serial_receiver
+
+# Build rule for target.
+serial_receiver: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 serial_receiver
+.PHONY : serial_receiver
+
+# fast build rule for target.
+serial_receiver/fast:
+	$(MAKE) -f robot_moveit_config/CMakeFiles/serial_receiver.dir/build.make robot_moveit_config/CMakeFiles/serial_receiver.dir/build
+.PHONY : serial_receiver/fast
+
+#=============================================================================
 # Target rules for targets named std_srvs_generate_messages_nodejs
 
 # Build rule for target.
@@ -1104,19 +1130,6 @@ visualization_msgs_generate_messages_eus/fast:
 .PHONY : visualization_msgs_generate_messages_eus/fast
 
 #=============================================================================
-# Target rules for targets named joint_state_publisher
-
-# Build rule for target.
-joint_state_publisher: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 joint_state_publisher
-.PHONY : joint_state_publisher
-
-# fast build rule for target.
-joint_state_publisher/fast:
-	$(MAKE) -f robot_moveit_config/CMakeFiles/joint_state_publisher.dir/build.make robot_moveit_config/CMakeFiles/joint_state_publisher.dir/build
-.PHONY : joint_state_publisher/fast
-
-#=============================================================================
 # Target rules for targets named moveit_msgs_generate_messages_py
 
 # Build rule for target.
@@ -1477,6 +1490,8 @@ help:
 	@echo "... gtest_main"
 	@echo "... gtest"
 	@echo "... _catkin_empty_exported_target"
+	@echo "... serial_sender"
+	@echo "... serial_receiver"
 	@echo "... std_srvs_generate_messages_nodejs"
 	@echo "... std_srvs_generate_messages_lisp"
 	@echo "... std_srvs_generate_messages_eus"
@@ -1539,7 +1554,6 @@ help:
 	@echo "... shape_msgs_generate_messages_py"
 	@echo "... geometry_msgs_generate_messages_cpp"
 	@echo "... visualization_msgs_generate_messages_eus"
-	@echo "... joint_state_publisher"
 	@echo "... moveit_msgs_generate_messages_py"
 	@echo "... object_recognition_msgs_generate_messages_lisp"
 	@echo "... geometry_msgs_generate_messages_lisp"
