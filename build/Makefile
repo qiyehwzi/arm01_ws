@@ -298,6 +298,32 @@ _catkin_empty_exported_target/fast:
 .PHONY : _catkin_empty_exported_target/fast
 
 #=============================================================================
+# Target rules for targets named trajectory_plan_z_up
+
+# Build rule for target.
+trajectory_plan_z_up: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 trajectory_plan_z_up
+.PHONY : trajectory_plan_z_up
+
+# fast build rule for target.
+trajectory_plan_z_up/fast:
+	$(MAKE) -f robot_moveit_config/CMakeFiles/trajectory_plan_z_up.dir/build.make robot_moveit_config/CMakeFiles/trajectory_plan_z_up.dir/build
+.PHONY : trajectory_plan_z_up/fast
+
+#=============================================================================
+# Target rules for targets named trajectory_plan_z_down
+
+# Build rule for target.
+trajectory_plan_z_down: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 trajectory_plan_z_down
+.PHONY : trajectory_plan_z_down
+
+# fast build rule for target.
+trajectory_plan_z_down/fast:
+	$(MAKE) -f robot_moveit_config/CMakeFiles/trajectory_plan_z_down.dir/build.make robot_moveit_config/CMakeFiles/trajectory_plan_z_down.dir/build
+.PHONY : trajectory_plan_z_down/fast
+
+#=============================================================================
 # Target rules for targets named serial_sender
 
 # Build rule for target.
@@ -1490,6 +1516,8 @@ help:
 	@echo "... gtest_main"
 	@echo "... gtest"
 	@echo "... _catkin_empty_exported_target"
+	@echo "... trajectory_plan_z_up"
+	@echo "... trajectory_plan_z_down"
 	@echo "... serial_sender"
 	@echo "... serial_receiver"
 	@echo "... std_srvs_generate_messages_nodejs"

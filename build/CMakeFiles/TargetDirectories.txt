@@ -48,6 +48,8 @@
 /home/tjurm/arm01_ws/build/robot_moveit_config/CMakeFiles/install.dir
 /home/tjurm/arm01_ws/build/robot_moveit_config/CMakeFiles/list_install_components.dir
 /home/tjurm/arm01_ws/build/robot_moveit_config/CMakeFiles/test.dir
+/home/tjurm/arm01_ws/build/robot_moveit_config/CMakeFiles/trajectory_plan_z_up.dir
+/home/tjurm/arm01_ws/build/robot_moveit_config/CMakeFiles/trajectory_plan_z_down.dir
 /home/tjurm/arm01_ws/build/robot_moveit_config/CMakeFiles/serial_sender.dir
 /home/tjurm/arm01_ws/build/robot_moveit_config/CMakeFiles/serial_receiver.dir
 /home/tjurm/arm01_ws/build/robot_moveit_config/CMakeFiles/std_srvs_generate_messages_nodejs.dir

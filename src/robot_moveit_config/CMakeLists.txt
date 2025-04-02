@@ -36,3 +36,8 @@ add_dependencies(serial_receiver ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EX
 add_executable(serial_sender src/serial_sender.cpp)
 target_link_libraries(serial_sender ${catkin_LIBRARIES})
 
+add_executable(trajectory_plan_z_down src/trajectory_plan_z_down.cpp)
+target_link_libraries(trajectory_plan_z_down ${catkin_LIBRARIES})
+
+add_executable(trajectory_plan_z_up src/trajectory_plan_z_up.cpp)
+target_link_libraries(trajectory_plan_z_up ${catkin_LIBRARIES})

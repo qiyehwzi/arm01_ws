@@ -168,6 +168,36 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+robot_moveit_config/CMakeFiles/trajectory_plan_z_up.dir/rule:
+	cd /home/tjurm/arm01_ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot_moveit_config/CMakeFiles/trajectory_plan_z_up.dir/rule
+.PHONY : robot_moveit_config/CMakeFiles/trajectory_plan_z_up.dir/rule
+
+# Convenience name for target.
+trajectory_plan_z_up: robot_moveit_config/CMakeFiles/trajectory_plan_z_up.dir/rule
+
+.PHONY : trajectory_plan_z_up
+
+# fast build rule for target.
+trajectory_plan_z_up/fast:
+	cd /home/tjurm/arm01_ws/build && $(MAKE) -f robot_moveit_config/CMakeFiles/trajectory_plan_z_up.dir/build.make robot_moveit_config/CMakeFiles/trajectory_plan_z_up.dir/build
+.PHONY : trajectory_plan_z_up/fast
+
+# Convenience name for target.
+robot_moveit_config/CMakeFiles/trajectory_plan_z_down.dir/rule:
+	cd /home/tjurm/arm01_ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot_moveit_config/CMakeFiles/trajectory_plan_z_down.dir/rule
+.PHONY : robot_moveit_config/CMakeFiles/trajectory_plan_z_down.dir/rule
+
+# Convenience name for target.
+trajectory_plan_z_down: robot_moveit_config/CMakeFiles/trajectory_plan_z_down.dir/rule
+
+.PHONY : trajectory_plan_z_down
+
+# fast build rule for target.
+trajectory_plan_z_down/fast:
+	cd /home/tjurm/arm01_ws/build && $(MAKE) -f robot_moveit_config/CMakeFiles/trajectory_plan_z_down.dir/build.make robot_moveit_config/CMakeFiles/trajectory_plan_z_down.dir/build
+.PHONY : trajectory_plan_z_down/fast
+
+# Convenience name for target.
 robot_moveit_config/CMakeFiles/serial_sender.dir/rule:
 	cd /home/tjurm/arm01_ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot_moveit_config/CMakeFiles/serial_sender.dir/rule
 .PHONY : robot_moveit_config/CMakeFiles/serial_sender.dir/rule
@@ -1571,6 +1601,60 @@ src/serial_sender.cpp.s:
 	cd /home/tjurm/arm01_ws/build && $(MAKE) -f robot_moveit_config/CMakeFiles/serial_sender.dir/build.make robot_moveit_config/CMakeFiles/serial_sender.dir/src/serial_sender.cpp.s
 .PHONY : src/serial_sender.cpp.s
 
+src/trajectory_plan_z_down.o: src/trajectory_plan_z_down.cpp.o
+
+.PHONY : src/trajectory_plan_z_down.o
+
+# target to build an object file
+src/trajectory_plan_z_down.cpp.o:
+	cd /home/tjurm/arm01_ws/build && $(MAKE) -f robot_moveit_config/CMakeFiles/trajectory_plan_z_down.dir/build.make robot_moveit_config/CMakeFiles/trajectory_plan_z_down.dir/src/trajectory_plan_z_down.cpp.o
+.PHONY : src/trajectory_plan_z_down.cpp.o
+
+src/trajectory_plan_z_down.i: src/trajectory_plan_z_down.cpp.i
+
+.PHONY : src/trajectory_plan_z_down.i
+
+# target to preprocess a source file
+src/trajectory_plan_z_down.cpp.i:
+	cd /home/tjurm/arm01_ws/build && $(MAKE) -f robot_moveit_config/CMakeFiles/trajectory_plan_z_down.dir/build.make robot_moveit_config/CMakeFiles/trajectory_plan_z_down.dir/src/trajectory_plan_z_down.cpp.i
+.PHONY : src/trajectory_plan_z_down.cpp.i
+
+src/trajectory_plan_z_down.s: src/trajectory_plan_z_down.cpp.s
+
+.PHONY : src/trajectory_plan_z_down.s
+
+# target to generate assembly for a file
+src/trajectory_plan_z_down.cpp.s:
+	cd /home/tjurm/arm01_ws/build && $(MAKE) -f robot_moveit_config/CMakeFiles/trajectory_plan_z_down.dir/build.make robot_moveit_config/CMakeFiles/trajectory_plan_z_down.dir/src/trajectory_plan_z_down.cpp.s
+.PHONY : src/trajectory_plan_z_down.cpp.s
+
+src/trajectory_plan_z_up.o: src/trajectory_plan_z_up.cpp.o
+
+.PHONY : src/trajectory_plan_z_up.o
+
+# target to build an object file
+src/trajectory_plan_z_up.cpp.o:
+	cd /home/tjurm/arm01_ws/build && $(MAKE) -f robot_moveit_config/CMakeFiles/trajectory_plan_z_up.dir/build.make robot_moveit_config/CMakeFiles/trajectory_plan_z_up.dir/src/trajectory_plan_z_up.cpp.o
+.PHONY : src/trajectory_plan_z_up.cpp.o
+
+src/trajectory_plan_z_up.i: src/trajectory_plan_z_up.cpp.i
+
+.PHONY : src/trajectory_plan_z_up.i
+
+# target to preprocess a source file
+src/trajectory_plan_z_up.cpp.i:
+	cd /home/tjurm/arm01_ws/build && $(MAKE) -f robot_moveit_config/CMakeFiles/trajectory_plan_z_up.dir/build.make robot_moveit_config/CMakeFiles/trajectory_plan_z_up.dir/src/trajectory_plan_z_up.cpp.i
+.PHONY : src/trajectory_plan_z_up.cpp.i
+
+src/trajectory_plan_z_up.s: src/trajectory_plan_z_up.cpp.s
+
+.PHONY : src/trajectory_plan_z_up.s
+
+# target to generate assembly for a file
+src/trajectory_plan_z_up.cpp.s:
+	cd /home/tjurm/arm01_ws/build && $(MAKE) -f robot_moveit_config/CMakeFiles/trajectory_plan_z_up.dir/build.make robot_moveit_config/CMakeFiles/trajectory_plan_z_up.dir/src/trajectory_plan_z_up.cpp.s
+.PHONY : src/trajectory_plan_z_up.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -1582,6 +1666,8 @@ help:
 	@echo "... install"
 	@echo "... list_install_components"
 	@echo "... test"
+	@echo "... trajectory_plan_z_up"
+	@echo "... trajectory_plan_z_down"
 	@echo "... serial_sender"
 	@echo "... serial_receiver"
 	@echo "... std_srvs_generate_messages_nodejs"
@@ -1680,6 +1766,12 @@ help:
 	@echo "... src/serial_sender.o"
 	@echo "... src/serial_sender.i"
 	@echo "... src/serial_sender.s"
+	@echo "... src/trajectory_plan_z_down.o"
+	@echo "... src/trajectory_plan_z_down.i"
+	@echo "... src/trajectory_plan_z_down.s"
+	@echo "... src/trajectory_plan_z_up.o"
+	@echo "... src/trajectory_plan_z_up.i"
+	@echo "... src/trajectory_plan_z_up.s"
 .PHONY : help
 
 

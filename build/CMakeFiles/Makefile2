@@ -139,6 +139,8 @@ gtest/googletest/clean: gtest/googletest/CMakeFiles/gtest.dir/clean
 # Directory level rules for directory robot_moveit_config
 
 # Recursive "all" directory target.
+robot_moveit_config/all: robot_moveit_config/CMakeFiles/trajectory_plan_z_up.dir/all
+robot_moveit_config/all: robot_moveit_config/CMakeFiles/trajectory_plan_z_down.dir/all
 robot_moveit_config/all: robot_moveit_config/CMakeFiles/serial_sender.dir/all
 robot_moveit_config/all: robot_moveit_config/CMakeFiles/serial_receiver.dir/all
 
@@ -150,6 +152,8 @@ robot_moveit_config/preinstall:
 .PHONY : robot_moveit_config/preinstall
 
 # Recursive "clean" directory target.
+robot_moveit_config/clean: robot_moveit_config/CMakeFiles/trajectory_plan_z_up.dir/clean
+robot_moveit_config/clean: robot_moveit_config/CMakeFiles/trajectory_plan_z_down.dir/clean
 robot_moveit_config/clean: robot_moveit_config/CMakeFiles/serial_sender.dir/clean
 robot_moveit_config/clean: robot_moveit_config/CMakeFiles/serial_receiver.dir/clean
 robot_moveit_config/clean: robot_moveit_config/CMakeFiles/std_srvs_generate_messages_nodejs.dir/clean
@@ -531,6 +535,60 @@ _catkin_empty_exported_target: tjurm_arm_final/CMakeFiles/_catkin_empty_exported
 tjurm_arm_final/CMakeFiles/_catkin_empty_exported_target.dir/clean:
 	$(MAKE) -f tjurm_arm_final/CMakeFiles/_catkin_empty_exported_target.dir/build.make tjurm_arm_final/CMakeFiles/_catkin_empty_exported_target.dir/clean
 .PHONY : tjurm_arm_final/CMakeFiles/_catkin_empty_exported_target.dir/clean
+
+#=============================================================================
+# Target rules for target robot_moveit_config/CMakeFiles/trajectory_plan_z_up.dir
+
+# All Build rule for target.
+robot_moveit_config/CMakeFiles/trajectory_plan_z_up.dir/all:
+	$(MAKE) -f robot_moveit_config/CMakeFiles/trajectory_plan_z_up.dir/build.make robot_moveit_config/CMakeFiles/trajectory_plan_z_up.dir/depend
+	$(MAKE) -f robot_moveit_config/CMakeFiles/trajectory_plan_z_up.dir/build.make robot_moveit_config/CMakeFiles/trajectory_plan_z_up.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/tjurm/arm01_ws/build/CMakeFiles --progress-num=15,16 "Built target trajectory_plan_z_up"
+.PHONY : robot_moveit_config/CMakeFiles/trajectory_plan_z_up.dir/all
+
+# Build rule for subdir invocation for target.
+robot_moveit_config/CMakeFiles/trajectory_plan_z_up.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/tjurm/arm01_ws/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 robot_moveit_config/CMakeFiles/trajectory_plan_z_up.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/tjurm/arm01_ws/build/CMakeFiles 0
+.PHONY : robot_moveit_config/CMakeFiles/trajectory_plan_z_up.dir/rule
+
+# Convenience name for target.
+trajectory_plan_z_up: robot_moveit_config/CMakeFiles/trajectory_plan_z_up.dir/rule
+
+.PHONY : trajectory_plan_z_up
+
+# clean rule for target.
+robot_moveit_config/CMakeFiles/trajectory_plan_z_up.dir/clean:
+	$(MAKE) -f robot_moveit_config/CMakeFiles/trajectory_plan_z_up.dir/build.make robot_moveit_config/CMakeFiles/trajectory_plan_z_up.dir/clean
+.PHONY : robot_moveit_config/CMakeFiles/trajectory_plan_z_up.dir/clean
+
+#=============================================================================
+# Target rules for target robot_moveit_config/CMakeFiles/trajectory_plan_z_down.dir
+
+# All Build rule for target.
+robot_moveit_config/CMakeFiles/trajectory_plan_z_down.dir/all:
+	$(MAKE) -f robot_moveit_config/CMakeFiles/trajectory_plan_z_down.dir/build.make robot_moveit_config/CMakeFiles/trajectory_plan_z_down.dir/depend
+	$(MAKE) -f robot_moveit_config/CMakeFiles/trajectory_plan_z_down.dir/build.make robot_moveit_config/CMakeFiles/trajectory_plan_z_down.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/tjurm/arm01_ws/build/CMakeFiles --progress-num=13,14 "Built target trajectory_plan_z_down"
+.PHONY : robot_moveit_config/CMakeFiles/trajectory_plan_z_down.dir/all
+
+# Build rule for subdir invocation for target.
+robot_moveit_config/CMakeFiles/trajectory_plan_z_down.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/tjurm/arm01_ws/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 robot_moveit_config/CMakeFiles/trajectory_plan_z_down.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/tjurm/arm01_ws/build/CMakeFiles 0
+.PHONY : robot_moveit_config/CMakeFiles/trajectory_plan_z_down.dir/rule
+
+# Convenience name for target.
+trajectory_plan_z_down: robot_moveit_config/CMakeFiles/trajectory_plan_z_down.dir/rule
+
+.PHONY : trajectory_plan_z_down
+
+# clean rule for target.
+robot_moveit_config/CMakeFiles/trajectory_plan_z_down.dir/clean:
+	$(MAKE) -f robot_moveit_config/CMakeFiles/trajectory_plan_z_down.dir/build.make robot_moveit_config/CMakeFiles/trajectory_plan_z_down.dir/clean
+.PHONY : robot_moveit_config/CMakeFiles/trajectory_plan_z_down.dir/clean
 
 #=============================================================================
 # Target rules for target robot_moveit_config/CMakeFiles/serial_sender.dir
