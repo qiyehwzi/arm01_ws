@@ -15,6 +15,7 @@ receive_msg_t receive_msg;
 
 void serial_init() {
     serial::Timeout to = serial::Timeout::simpleTimeout(100);
+    // sp.setPort("/dev/stm32_acm");
     sp.setPort("/dev/ttyUSB0");
     sp.setBaudrate(115200);
     sp.setTimeout(to);

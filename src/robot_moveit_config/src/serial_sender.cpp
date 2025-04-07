@@ -30,7 +30,13 @@ void execute_callback(const control_msgs::FollowJointTrajectoryGoalConstPtr& goa
 
 void serial_init() {
     serial::Timeout to = serial::Timeout::simpleTimeout(100);
+    // sp.setPort("/dev/stm32_acm");
     sp.setPort("/dev/ttyUSB0");
+
+    //sudo sh -c 'echo "SUBSYSTEM==\"tty\", ATTRS{idVendor}==\"0483\", ATTRS{idProduct}==\"5740\", ATTRS{serial}==\"3447385B3133\", SYMLINK+=\"stm32_acm\"" > /etc/udev/rules.d/99-stm32.rules'
+    //sudo udevadm control --reload
+    //sudo udevadm trigger
+    
     sp.setBaudrate(115200);
     sp.setTimeout(to);
 }

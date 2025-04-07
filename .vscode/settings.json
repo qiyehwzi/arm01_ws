@@ -10,6 +10,7 @@
         "iostream": "cpp",
         "string": "cpp",
         "deque": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "condition_variable": "cpp"
     }
 }

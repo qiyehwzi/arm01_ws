@@ -168,6 +168,21 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+robot_moveit_config/CMakeFiles/moveit_planning_scene_demo.dir/rule:
+	cd /home/tjurm/arm01_ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot_moveit_config/CMakeFiles/moveit_planning_scene_demo.dir/rule
+.PHONY : robot_moveit_config/CMakeFiles/moveit_planning_scene_demo.dir/rule
+
+# Convenience name for target.
+moveit_planning_scene_demo: robot_moveit_config/CMakeFiles/moveit_planning_scene_demo.dir/rule
+
+.PHONY : moveit_planning_scene_demo
+
+# fast build rule for target.
+moveit_planning_scene_demo/fast:
+	cd /home/tjurm/arm01_ws/build && $(MAKE) -f robot_moveit_config/CMakeFiles/moveit_planning_scene_demo.dir/build.make robot_moveit_config/CMakeFiles/moveit_planning_scene_demo.dir/build
+.PHONY : moveit_planning_scene_demo/fast
+
+# Convenience name for target.
 robot_moveit_config/CMakeFiles/trajectory_plan_z_up.dir/rule:
 	cd /home/tjurm/arm01_ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot_moveit_config/CMakeFiles/trajectory_plan_z_up.dir/rule
 .PHONY : robot_moveit_config/CMakeFiles/trajectory_plan_z_up.dir/rule
@@ -1398,6 +1413,21 @@ moveit_msgs_generate_messages_cpp/fast:
 .PHONY : moveit_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
+robot_moveit_config/CMakeFiles/shm.dir/rule:
+	cd /home/tjurm/arm01_ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot_moveit_config/CMakeFiles/shm.dir/rule
+.PHONY : robot_moveit_config/CMakeFiles/shm.dir/rule
+
+# Convenience name for target.
+shm: robot_moveit_config/CMakeFiles/shm.dir/rule
+
+.PHONY : shm
+
+# fast build rule for target.
+shm/fast:
+	cd /home/tjurm/arm01_ws/build && $(MAKE) -f robot_moveit_config/CMakeFiles/shm.dir/build.make robot_moveit_config/CMakeFiles/shm.dir/build
+.PHONY : shm/fast
+
+# Convenience name for target.
 robot_moveit_config/CMakeFiles/moveit_msgs_generate_messages_nodejs.dir/rule:
 	cd /home/tjurm/arm01_ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot_moveit_config/CMakeFiles/moveit_msgs_generate_messages_nodejs.dir/rule
 .PHONY : robot_moveit_config/CMakeFiles/moveit_msgs_generate_messages_nodejs.dir/rule
@@ -1547,6 +1577,33 @@ object_recognition_msgs_generate_messages_nodejs/fast:
 	cd /home/tjurm/arm01_ws/build && $(MAKE) -f robot_moveit_config/CMakeFiles/object_recognition_msgs_generate_messages_nodejs.dir/build.make robot_moveit_config/CMakeFiles/object_recognition_msgs_generate_messages_nodejs.dir/build
 .PHONY : object_recognition_msgs_generate_messages_nodejs/fast
 
+src/moveit_planning_scene_demo.o: src/moveit_planning_scene_demo.cpp.o
+
+.PHONY : src/moveit_planning_scene_demo.o
+
+# target to build an object file
+src/moveit_planning_scene_demo.cpp.o:
+	cd /home/tjurm/arm01_ws/build && $(MAKE) -f robot_moveit_config/CMakeFiles/moveit_planning_scene_demo.dir/build.make robot_moveit_config/CMakeFiles/moveit_planning_scene_demo.dir/src/moveit_planning_scene_demo.cpp.o
+.PHONY : src/moveit_planning_scene_demo.cpp.o
+
+src/moveit_planning_scene_demo.i: src/moveit_planning_scene_demo.cpp.i
+
+.PHONY : src/moveit_planning_scene_demo.i
+
+# target to preprocess a source file
+src/moveit_planning_scene_demo.cpp.i:
+	cd /home/tjurm/arm01_ws/build && $(MAKE) -f robot_moveit_config/CMakeFiles/moveit_planning_scene_demo.dir/build.make robot_moveit_config/CMakeFiles/moveit_planning_scene_demo.dir/src/moveit_planning_scene_demo.cpp.i
+.PHONY : src/moveit_planning_scene_demo.cpp.i
+
+src/moveit_planning_scene_demo.s: src/moveit_planning_scene_demo.cpp.s
+
+.PHONY : src/moveit_planning_scene_demo.s
+
+# target to generate assembly for a file
+src/moveit_planning_scene_demo.cpp.s:
+	cd /home/tjurm/arm01_ws/build && $(MAKE) -f robot_moveit_config/CMakeFiles/moveit_planning_scene_demo.dir/build.make robot_moveit_config/CMakeFiles/moveit_planning_scene_demo.dir/src/moveit_planning_scene_demo.cpp.s
+.PHONY : src/moveit_planning_scene_demo.cpp.s
+
 src/serial_receiver.o: src/serial_receiver.cpp.o
 
 .PHONY : src/serial_receiver.o
@@ -1600,6 +1657,33 @@ src/serial_sender.s: src/serial_sender.cpp.s
 src/serial_sender.cpp.s:
 	cd /home/tjurm/arm01_ws/build && $(MAKE) -f robot_moveit_config/CMakeFiles/serial_sender.dir/build.make robot_moveit_config/CMakeFiles/serial_sender.dir/src/serial_sender.cpp.s
 .PHONY : src/serial_sender.cpp.s
+
+src/shm.o: src/shm.cpp.o
+
+.PHONY : src/shm.o
+
+# target to build an object file
+src/shm.cpp.o:
+	cd /home/tjurm/arm01_ws/build && $(MAKE) -f robot_moveit_config/CMakeFiles/shm.dir/build.make robot_moveit_config/CMakeFiles/shm.dir/src/shm.cpp.o
+.PHONY : src/shm.cpp.o
+
+src/shm.i: src/shm.cpp.i
+
+.PHONY : src/shm.i
+
+# target to preprocess a source file
+src/shm.cpp.i:
+	cd /home/tjurm/arm01_ws/build && $(MAKE) -f robot_moveit_config/CMakeFiles/shm.dir/build.make robot_moveit_config/CMakeFiles/shm.dir/src/shm.cpp.i
+.PHONY : src/shm.cpp.i
+
+src/shm.s: src/shm.cpp.s
+
+.PHONY : src/shm.s
+
+# target to generate assembly for a file
+src/shm.cpp.s:
+	cd /home/tjurm/arm01_ws/build && $(MAKE) -f robot_moveit_config/CMakeFiles/shm.dir/build.make robot_moveit_config/CMakeFiles/shm.dir/src/shm.cpp.s
+.PHONY : src/shm.cpp.s
 
 src/trajectory_plan_z_down.o: src/trajectory_plan_z_down.cpp.o
 
@@ -1666,6 +1750,7 @@ help:
 	@echo "... install"
 	@echo "... list_install_components"
 	@echo "... test"
+	@echo "... moveit_planning_scene_demo"
 	@echo "... trajectory_plan_z_up"
 	@echo "... trajectory_plan_z_down"
 	@echo "... serial_sender"
@@ -1749,6 +1834,7 @@ help:
 	@echo "... trajectory_msgs_generate_messages_py"
 	@echo "... visualization_msgs_generate_messages_py"
 	@echo "... moveit_msgs_generate_messages_cpp"
+	@echo "... shm"
 	@echo "... moveit_msgs_generate_messages_nodejs"
 	@echo "... sensor_msgs_generate_messages_cpp"
 	@echo "... visualization_msgs_generate_messages_cpp"
@@ -1760,12 +1846,18 @@ help:
 	@echo "... trajectory_msgs_generate_messages_lisp"
 	@echo "... object_recognition_msgs_generate_messages_eus"
 	@echo "... object_recognition_msgs_generate_messages_nodejs"
+	@echo "... src/moveit_planning_scene_demo.o"
+	@echo "... src/moveit_planning_scene_demo.i"
+	@echo "... src/moveit_planning_scene_demo.s"
 	@echo "... src/serial_receiver.o"
 	@echo "... src/serial_receiver.i"
 	@echo "... src/serial_receiver.s"
 	@echo "... src/serial_sender.o"
 	@echo "... src/serial_sender.i"
 	@echo "... src/serial_sender.s"
+	@echo "... src/shm.o"
+	@echo "... src/shm.i"
+	@echo "... src/shm.s"
 	@echo "... src/trajectory_plan_z_down.o"
 	@echo "... src/trajectory_plan_z_down.i"
 	@echo "... src/trajectory_plan_z_down.s"

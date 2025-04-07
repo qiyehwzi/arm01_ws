@@ -25,6 +25,8 @@ catkin_package(
 
 include_directories(include ${catkin_INCLUDE_DIRS})
 
+include_directories(include )
+
 install(DIRECTORY launch DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
   PATTERN "setup_assistant.launch" EXCLUDE)
 install(DIRECTORY config DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
@@ -41,3 +43,10 @@ target_link_libraries(trajectory_plan_z_down ${catkin_LIBRARIES})
 
 add_executable(trajectory_plan_z_up src/trajectory_plan_z_up.cpp)
 target_link_libraries(trajectory_plan_z_up ${catkin_LIBRARIES})
+
+add_executable(moveit_planning_scene_demo src/moveit_planning_scene_demo.cpp)
+target_link_libraries(moveit_planning_scene_demo ${catkin_LIBRARIES})
+
+add_executable(shm src/shm.cpp)
+target_link_libraries(shm ${catkin_LIBRARIES})
+
