@@ -26,13 +26,21 @@ bool calculateApproachPose(const geometry_msgs::Pose& obstacle_pose,
     tf2::fromMsg(current_pose.pose.orientation, q_end);
     tf2::Vector3 end_z = tf2::quatRotate(q_end, tf2::Vector3(0,0,1));
 
-    // 2. 设置目标位置（沿末端Z轴反方向偏移）
-    target_pose.position.x = 0.5;//current_pose.pose.position.x - end_z.x()*approach_distance;
-    target_pose.position.y = 0;//current_pose.pose.position.y - end_z.y()*approach_distance;
-    target_pose.position.z = 0.5;//.5current_pose.pose.position.z - end_z.z()*approach_distance;
+    // 2. 设置目标位置
+    target_pose.position.x = current_pose.pose.position.x - end_z.x()*approach_distance;
+    target_pose.position.y = current_pose.pose.position.y - end_z.y()*approach_distance;
+    target_pose.position.z = current_pose.pose.position.z - end_z.z()*approach_distance;
 
-    // 3. 直接继承末端当前姿态
-    target_pose.orientation = current_pose.pose.orientation;
+    ROS_INFO("target_pose.position.x : %f\n",target_pose.position.x);
+    ROS_INFO("target_pose.position.y : %f\n",target_pose.position.y);
+    ROS_INFO("target_pose.position.z : %f\n",target_pose.position.z);
+
+    // //3. 直接继承末端当前姿态
+    // target_pose.orientation = current_pose.pose.orientation;
+    // 强制末端Z轴与障碍物表面法向平行
+    tf2::Quaternion q_obstacle;
+    tf2::fromMsg(obstacle_pose.orientation, q_obstacle);
+    target_pose.orientation = tf2::toMsg(q_obstacle);  // 使用障碍物姿态
 
     return true;
 }
@@ -88,9 +96,22 @@ int main(int argc, char** argv)
     obstacle_pose.position.y = 0.0;
     obstacle_pose.position.z = 0.5;
     
-    // 生成障碍物姿态
+    //生成障碍物姿态
+    tf2::Quaternion q_rot1, q_rot2, q_obstacle;
+    q_rot1.setRPY(0, M_PI/2, 0);  // 绕Y轴90°
+    q_rot2.setRPY(M_PI, 0, 0);    // 绕X轴180°
+    q_obstacle = q_rot2 * q_rot1; // 组合旋转
+    obstacle_pose.orientation = tf2::toMsg(q_obstacle);
+
+    // tf2::Matrix3x3 mat;
+    // mat.setValue
+    // (
+    //     0, 0, 1,  // 新X轴 = 原Z轴
+    //     0, -1, 0, // 新Y轴 = 原Y轴反向
+    //     1, 0, 0   // 新Z轴 = 原X轴
+    // );
     // tf2::Quaternion q_obstacle;
-    // q_obstacle.setRPY(0, -M_PI/2, 0);  // 示例姿态：Pitch=-90°
+    // mat.getRotation(q_obstacle);
     // obstacle_pose.orientation = tf2::toMsg(q_obstacle);
     
     // planner.addObstacle("target_box", obstacle_pose, {0.288, 0.288, 0.288});
@@ -102,6 +123,12 @@ int main(int argc, char** argv)
         return -1;
     }
     
+        ROS_INFO("Obstacle orientation: (%.3f, %.3f, %.3f, %.3f)", 
+        q_obstacle.x(), q_obstacle.y(), q_obstacle.z(), q_obstacle.w());
+        ROS_INFO("Target orientation: (%.3f, %.3f, %.3f, %.3f)",
+        target_pose.orientation.x, target_pose.orientation.y,
+        target_pose.orientation.z, target_pose.orientation.w);
+
     //执行运动
     if(planner.executeApproach(target_pose)) {
         ROS_INFO("Approach movement completed");
@@ -110,6 +137,7 @@ int main(int argc, char** argv)
         ROS_ERROR("Movement execution failed");
     }
     
-    ros::waitForShutdown();
+    // ros::waitForShutdown();
+    ros::shutdown();
     return 0;
 }
