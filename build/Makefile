@@ -311,6 +311,19 @@ share_memory/fast:
 .PHONY : share_memory/fast
 
 #=============================================================================
+# Target rules for targets named test_planning
+
+# Build rule for target.
+test_planning: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_planning
+.PHONY : test_planning
+
+# fast build rule for target.
+test_planning/fast:
+	$(MAKE) -f robot_moveit_config/CMakeFiles/test_planning.dir/build.make robot_moveit_config/CMakeFiles/test_planning.dir/build
+.PHONY : test_planning/fast
+
+#=============================================================================
 # Target rules for targets named moveit_planning_scene_demo
 
 # Build rule for target.
@@ -1543,6 +1556,7 @@ help:
 	@echo "... gtest"
 	@echo "... _catkin_empty_exported_target"
 	@echo "... share_memory"
+	@echo "... test_planning"
 	@echo "... moveit_planning_scene_demo"
 	@echo "... trajectory_plan_z_up"
 	@echo "... trajectory_plan_z_down"

@@ -36,7 +36,6 @@ bool waitForStateUpdate(std::string obstacle_name, moveit::planning_interface::P
   return false;
 }
 
-
 int main(int argc, char **argv){
   ros::init(argc, argv, "moveit_planning_scene_demo");
   ros::NodeHandle nh;
@@ -46,7 +45,7 @@ int main(int argc, char **argv){
   // 创建PlanningSceneInterface对象scene用来对规划场景进行操作
   moveit::planning_interface::PlanningSceneInterface scene;
   // 设置一个比例因子以选择性地降低最大关节速度限制，可取值为(0,1]
-  arm.setMaxVelocityScalingFactor(0.8);
+  arm.setMaxVelocityScalingFactor(0.5);
 
   // 机械臂回到初始位置
 //   ROS_INFO("Moving to pose: home");
@@ -83,7 +82,7 @@ int main(int argc, char **argv){
   box_primitive.dimensions[1] = 0.288;
   box_primitive.dimensions[2] = 0.288;
   geometry_msgs::Pose box_pose;
-  box_pose.position.x = 1.000;
+  box_pose.position.x = 0.900;
   box_pose.position.y = 0;
   box_pose.position.z = 0.500 ;
 
@@ -151,7 +150,7 @@ int main(int argc, char **argv){
   geometry_msgs::PoseStamped target_pose;
   target_pose.header.frame_id = "base_link";
   target_pose.header.stamp = ros::Time::now();
-  target_pose.pose.position.x = 0.600;
+  target_pose.pose.position.x = 0.500;
   target_pose.pose.position.y = 0.0;
   target_pose.pose.position.z = 0.500;
   target_pose.pose.orientation.x = q2.x();

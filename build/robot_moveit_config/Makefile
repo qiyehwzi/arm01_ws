@@ -183,6 +183,21 @@ share_memory/fast:
 .PHONY : share_memory/fast
 
 # Convenience name for target.
+robot_moveit_config/CMakeFiles/test_planning.dir/rule:
+	cd /home/tjurm/arm01_ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot_moveit_config/CMakeFiles/test_planning.dir/rule
+.PHONY : robot_moveit_config/CMakeFiles/test_planning.dir/rule
+
+# Convenience name for target.
+test_planning: robot_moveit_config/CMakeFiles/test_planning.dir/rule
+
+.PHONY : test_planning
+
+# fast build rule for target.
+test_planning/fast:
+	cd /home/tjurm/arm01_ws/build && $(MAKE) -f robot_moveit_config/CMakeFiles/test_planning.dir/build.make robot_moveit_config/CMakeFiles/test_planning.dir/build
+.PHONY : test_planning/fast
+
+# Convenience name for target.
 robot_moveit_config/CMakeFiles/moveit_planning_scene_demo.dir/rule:
 	cd /home/tjurm/arm01_ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot_moveit_config/CMakeFiles/moveit_planning_scene_demo.dir/rule
 .PHONY : robot_moveit_config/CMakeFiles/moveit_planning_scene_demo.dir/rule
@@ -1685,6 +1700,33 @@ src/share_memory.cpp.s:
 	cd /home/tjurm/arm01_ws/build && $(MAKE) -f robot_moveit_config/CMakeFiles/share_memory.dir/build.make robot_moveit_config/CMakeFiles/share_memory.dir/src/share_memory.cpp.s
 .PHONY : src/share_memory.cpp.s
 
+src/test_planning.o: src/test_planning.cpp.o
+
+.PHONY : src/test_planning.o
+
+# target to build an object file
+src/test_planning.cpp.o:
+	cd /home/tjurm/arm01_ws/build && $(MAKE) -f robot_moveit_config/CMakeFiles/test_planning.dir/build.make robot_moveit_config/CMakeFiles/test_planning.dir/src/test_planning.cpp.o
+.PHONY : src/test_planning.cpp.o
+
+src/test_planning.i: src/test_planning.cpp.i
+
+.PHONY : src/test_planning.i
+
+# target to preprocess a source file
+src/test_planning.cpp.i:
+	cd /home/tjurm/arm01_ws/build && $(MAKE) -f robot_moveit_config/CMakeFiles/test_planning.dir/build.make robot_moveit_config/CMakeFiles/test_planning.dir/src/test_planning.cpp.i
+.PHONY : src/test_planning.cpp.i
+
+src/test_planning.s: src/test_planning.cpp.s
+
+.PHONY : src/test_planning.s
+
+# target to generate assembly for a file
+src/test_planning.cpp.s:
+	cd /home/tjurm/arm01_ws/build && $(MAKE) -f robot_moveit_config/CMakeFiles/test_planning.dir/build.make robot_moveit_config/CMakeFiles/test_planning.dir/src/test_planning.cpp.s
+.PHONY : src/test_planning.cpp.s
+
 src/trajectory_plan_z_down.o: src/trajectory_plan_z_down.cpp.o
 
 .PHONY : src/trajectory_plan_z_down.o
@@ -1751,6 +1793,7 @@ help:
 	@echo "... list_install_components"
 	@echo "... test"
 	@echo "... share_memory"
+	@echo "... test_planning"
 	@echo "... moveit_planning_scene_demo"
 	@echo "... trajectory_plan_z_up"
 	@echo "... trajectory_plan_z_down"
@@ -1858,6 +1901,9 @@ help:
 	@echo "... src/share_memory.o"
 	@echo "... src/share_memory.i"
 	@echo "... src/share_memory.s"
+	@echo "... src/test_planning.o"
+	@echo "... src/test_planning.i"
+	@echo "... src/test_planning.s"
 	@echo "... src/trajectory_plan_z_down.o"
 	@echo "... src/trajectory_plan_z_down.i"
 	@echo "... src/trajectory_plan_z_down.s"

@@ -6,6 +6,7 @@
 typedef struct {
   uint8_t sof;
   float tra[6];
+  uint8_t color;
   uint8_t tailer;
 } receive_msg_t;
 #pragma pack()
