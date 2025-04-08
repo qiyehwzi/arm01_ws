@@ -168,6 +168,21 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+robot_moveit_config/CMakeFiles/share_memory.dir/rule:
+	cd /home/tjurm/arm01_ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot_moveit_config/CMakeFiles/share_memory.dir/rule
+.PHONY : robot_moveit_config/CMakeFiles/share_memory.dir/rule
+
+# Convenience name for target.
+share_memory: robot_moveit_config/CMakeFiles/share_memory.dir/rule
+
+.PHONY : share_memory
+
+# fast build rule for target.
+share_memory/fast:
+	cd /home/tjurm/arm01_ws/build && $(MAKE) -f robot_moveit_config/CMakeFiles/share_memory.dir/build.make robot_moveit_config/CMakeFiles/share_memory.dir/build
+.PHONY : share_memory/fast
+
+# Convenience name for target.
 robot_moveit_config/CMakeFiles/moveit_planning_scene_demo.dir/rule:
 	cd /home/tjurm/arm01_ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot_moveit_config/CMakeFiles/moveit_planning_scene_demo.dir/rule
 .PHONY : robot_moveit_config/CMakeFiles/moveit_planning_scene_demo.dir/rule
@@ -1413,21 +1428,6 @@ moveit_msgs_generate_messages_cpp/fast:
 .PHONY : moveit_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
-robot_moveit_config/CMakeFiles/shm.dir/rule:
-	cd /home/tjurm/arm01_ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot_moveit_config/CMakeFiles/shm.dir/rule
-.PHONY : robot_moveit_config/CMakeFiles/shm.dir/rule
-
-# Convenience name for target.
-shm: robot_moveit_config/CMakeFiles/shm.dir/rule
-
-.PHONY : shm
-
-# fast build rule for target.
-shm/fast:
-	cd /home/tjurm/arm01_ws/build && $(MAKE) -f robot_moveit_config/CMakeFiles/shm.dir/build.make robot_moveit_config/CMakeFiles/shm.dir/build
-.PHONY : shm/fast
-
-# Convenience name for target.
 robot_moveit_config/CMakeFiles/moveit_msgs_generate_messages_nodejs.dir/rule:
 	cd /home/tjurm/arm01_ws/build && $(MAKE) -f CMakeFiles/Makefile2 robot_moveit_config/CMakeFiles/moveit_msgs_generate_messages_nodejs.dir/rule
 .PHONY : robot_moveit_config/CMakeFiles/moveit_msgs_generate_messages_nodejs.dir/rule
@@ -1658,32 +1658,32 @@ src/serial_sender.cpp.s:
 	cd /home/tjurm/arm01_ws/build && $(MAKE) -f robot_moveit_config/CMakeFiles/serial_sender.dir/build.make robot_moveit_config/CMakeFiles/serial_sender.dir/src/serial_sender.cpp.s
 .PHONY : src/serial_sender.cpp.s
 
-src/shm.o: src/shm.cpp.o
+src/share_memory.o: src/share_memory.cpp.o
 
-.PHONY : src/shm.o
+.PHONY : src/share_memory.o
 
 # target to build an object file
-src/shm.cpp.o:
-	cd /home/tjurm/arm01_ws/build && $(MAKE) -f robot_moveit_config/CMakeFiles/shm.dir/build.make robot_moveit_config/CMakeFiles/shm.dir/src/shm.cpp.o
-.PHONY : src/shm.cpp.o
+src/share_memory.cpp.o:
+	cd /home/tjurm/arm01_ws/build && $(MAKE) -f robot_moveit_config/CMakeFiles/share_memory.dir/build.make robot_moveit_config/CMakeFiles/share_memory.dir/src/share_memory.cpp.o
+.PHONY : src/share_memory.cpp.o
 
-src/shm.i: src/shm.cpp.i
+src/share_memory.i: src/share_memory.cpp.i
 
-.PHONY : src/shm.i
+.PHONY : src/share_memory.i
 
 # target to preprocess a source file
-src/shm.cpp.i:
-	cd /home/tjurm/arm01_ws/build && $(MAKE) -f robot_moveit_config/CMakeFiles/shm.dir/build.make robot_moveit_config/CMakeFiles/shm.dir/src/shm.cpp.i
-.PHONY : src/shm.cpp.i
+src/share_memory.cpp.i:
+	cd /home/tjurm/arm01_ws/build && $(MAKE) -f robot_moveit_config/CMakeFiles/share_memory.dir/build.make robot_moveit_config/CMakeFiles/share_memory.dir/src/share_memory.cpp.i
+.PHONY : src/share_memory.cpp.i
 
-src/shm.s: src/shm.cpp.s
+src/share_memory.s: src/share_memory.cpp.s
 
-.PHONY : src/shm.s
+.PHONY : src/share_memory.s
 
 # target to generate assembly for a file
-src/shm.cpp.s:
-	cd /home/tjurm/arm01_ws/build && $(MAKE) -f robot_moveit_config/CMakeFiles/shm.dir/build.make robot_moveit_config/CMakeFiles/shm.dir/src/shm.cpp.s
-.PHONY : src/shm.cpp.s
+src/share_memory.cpp.s:
+	cd /home/tjurm/arm01_ws/build && $(MAKE) -f robot_moveit_config/CMakeFiles/share_memory.dir/build.make robot_moveit_config/CMakeFiles/share_memory.dir/src/share_memory.cpp.s
+.PHONY : src/share_memory.cpp.s
 
 src/trajectory_plan_z_down.o: src/trajectory_plan_z_down.cpp.o
 
@@ -1750,6 +1750,7 @@ help:
 	@echo "... install"
 	@echo "... list_install_components"
 	@echo "... test"
+	@echo "... share_memory"
 	@echo "... moveit_planning_scene_demo"
 	@echo "... trajectory_plan_z_up"
 	@echo "... trajectory_plan_z_down"
@@ -1834,7 +1835,6 @@ help:
 	@echo "... trajectory_msgs_generate_messages_py"
 	@echo "... visualization_msgs_generate_messages_py"
 	@echo "... moveit_msgs_generate_messages_cpp"
-	@echo "... shm"
 	@echo "... moveit_msgs_generate_messages_nodejs"
 	@echo "... sensor_msgs_generate_messages_cpp"
 	@echo "... visualization_msgs_generate_messages_cpp"
@@ -1855,9 +1855,9 @@ help:
 	@echo "... src/serial_sender.o"
 	@echo "... src/serial_sender.i"
 	@echo "... src/serial_sender.s"
-	@echo "... src/shm.o"
-	@echo "... src/shm.i"
-	@echo "... src/shm.s"
+	@echo "... src/share_memory.o"
+	@echo "... src/share_memory.i"
+	@echo "... src/share_memory.s"
 	@echo "... src/trajectory_plan_z_down.o"
 	@echo "... src/trajectory_plan_z_down.i"
 	@echo "... src/trajectory_plan_z_down.s"

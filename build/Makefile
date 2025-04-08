@@ -298,6 +298,19 @@ _catkin_empty_exported_target/fast:
 .PHONY : _catkin_empty_exported_target/fast
 
 #=============================================================================
+# Target rules for targets named share_memory
+
+# Build rule for target.
+share_memory: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 share_memory
+.PHONY : share_memory
+
+# fast build rule for target.
+share_memory/fast:
+	$(MAKE) -f robot_moveit_config/CMakeFiles/share_memory.dir/build.make robot_moveit_config/CMakeFiles/share_memory.dir/build
+.PHONY : share_memory/fast
+
+#=============================================================================
 # Target rules for targets named moveit_planning_scene_demo
 
 # Build rule for target.
@@ -1377,19 +1390,6 @@ moveit_msgs_generate_messages_cpp/fast:
 .PHONY : moveit_msgs_generate_messages_cpp/fast
 
 #=============================================================================
-# Target rules for targets named shm
-
-# Build rule for target.
-shm: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 shm
-.PHONY : shm
-
-# fast build rule for target.
-shm/fast:
-	$(MAKE) -f robot_moveit_config/CMakeFiles/shm.dir/build.make robot_moveit_config/CMakeFiles/shm.dir/build
-.PHONY : shm/fast
-
-#=============================================================================
 # Target rules for targets named moveit_msgs_generate_messages_nodejs
 
 # Build rule for target.
@@ -1542,6 +1542,7 @@ help:
 	@echo "... gtest_main"
 	@echo "... gtest"
 	@echo "... _catkin_empty_exported_target"
+	@echo "... share_memory"
 	@echo "... moveit_planning_scene_demo"
 	@echo "... trajectory_plan_z_up"
 	@echo "... trajectory_plan_z_down"
@@ -1625,7 +1626,6 @@ help:
 	@echo "... trajectory_msgs_generate_messages_py"
 	@echo "... visualization_msgs_generate_messages_py"
 	@echo "... moveit_msgs_generate_messages_cpp"
-	@echo "... shm"
 	@echo "... moveit_msgs_generate_messages_nodejs"
 	@echo "... sensor_msgs_generate_messages_cpp"
 	@echo "... visualization_msgs_generate_messages_cpp"

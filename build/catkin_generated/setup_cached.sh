@@ -7,4 +7,7 @@
 # new environment variables
 
 # modified environment variables
+export CMAKE_PREFIX_PATH="/home/tjurm/arm01_ws/devel:$CMAKE_PREFIX_PATH"
 export PWD='/home/tjurm/arm01_ws/build'
+export ROSLISP_PACKAGE_DIRECTORIES='/home/tjurm/arm01_ws/devel/share/common-lisp'
+export ROS_PACKAGE_PATH="/home/tjurm/arm01_ws/src:$ROS_PACKAGE_PATH"

@@ -48,6 +48,7 @@
 /home/tjurm/arm01_ws/build/robot_moveit_config/CMakeFiles/install.dir
 /home/tjurm/arm01_ws/build/robot_moveit_config/CMakeFiles/list_install_components.dir
 /home/tjurm/arm01_ws/build/robot_moveit_config/CMakeFiles/test.dir
+/home/tjurm/arm01_ws/build/robot_moveit_config/CMakeFiles/share_memory.dir
 /home/tjurm/arm01_ws/build/robot_moveit_config/CMakeFiles/moveit_planning_scene_demo.dir
 /home/tjurm/arm01_ws/build/robot_moveit_config/CMakeFiles/trajectory_plan_z_up.dir
 /home/tjurm/arm01_ws/build/robot_moveit_config/CMakeFiles/trajectory_plan_z_down.dir
@@ -132,7 +133,6 @@
 /home/tjurm/arm01_ws/build/robot_moveit_config/CMakeFiles/trajectory_msgs_generate_messages_py.dir
 /home/tjurm/arm01_ws/build/robot_moveit_config/CMakeFiles/visualization_msgs_generate_messages_py.dir
 /home/tjurm/arm01_ws/build/robot_moveit_config/CMakeFiles/moveit_msgs_generate_messages_cpp.dir
-/home/tjurm/arm01_ws/build/robot_moveit_config/CMakeFiles/shm.dir
 /home/tjurm/arm01_ws/build/robot_moveit_config/CMakeFiles/moveit_msgs_generate_messages_nodejs.dir
 /home/tjurm/arm01_ws/build/robot_moveit_config/CMakeFiles/sensor_msgs_generate_messages_cpp.dir
 /home/tjurm/arm01_ws/build/robot_moveit_config/CMakeFiles/visualization_msgs_generate_messages_cpp.dir
