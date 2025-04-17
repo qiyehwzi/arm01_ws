@@ -7,6 +7,64 @@
 #include <tf2/LinearMath/Quaternion.h>
 #include <tf2/LinearMath/Matrix3x3.h>
 
+#include <sys/mman.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <unistd.h>
+#include <pthread.h>
+#include <string.h>
+#include <stdint.h>
+#include <ctime>
+
+struct SharedData{
+    pthread_mutex_t mutex;       // 互斥锁确保独占访问
+    double matrix[4][4];         // 4x4变换矩阵
+    short color;                 // 我方颜色
+    double x,y,z;                //
+    uint64_t version;            // 版本号
+};
+
+#define SHM_NAME "/transform_matrix_shm"
+#define SHM_SIZE sizeof(SharedData)
+
+
+/* 原子化写入（统一矩阵类型为 double） */
+void update_shared_data(
+    SharedData* data,
+    short new_color
+) {
+    pthread_mutex_lock(&data->mutex); // 安全复制
+    data->color = new_color;
+    pthread_mutex_unlock(&data->mutex);
+}
+
+/* 原子化读取（完整数据拷贝） */
+void read_shared_data(
+    SharedData* data,
+    double out_matrix[4][4],
+    double* x,
+    double* y,
+    double* z,
+    uint64_t* out_version
+) {
+    pthread_mutex_lock(&data->mutex);
+    memcpy(out_matrix, data->matrix, sizeof(double[4][4]));
+    *out_version = data->version;
+    *x = data->x;
+    *y = data->y;
+    *z = data->z;
+    pthread_mutex_unlock(&data->mutex);
+}
+
+class camera_message{
+public:
+
+    double matrix[4][4];
+    double position_center[3];
+    uint64_t version;            // 版本号
+}cmes;
+uint64_t lastversion;
+
 class pose_and_position{
 public:
   double dimension;
@@ -49,6 +107,27 @@ bool waitForStateUpdate(std::string obstacle_name, moveit::planning_interface::P
 }
 
 int main(int argc, char **argv){
+  //shared_memory  
+  int fd = -1;
+  while(fd == -1) {
+      fd = shm_open(SHM_NAME, O_RDWR | O_CREAT, 0666);
+      if (fd == -1) {
+          std::cerr << "Failed to create shared memory." << std::endl;
+      }
+  }
+  //fd = shm_open(SHM_NAME, O_CREAT | O_RDWR, 0666);
+  SharedData* shm = (SharedData*)mmap(NULL, SHM_SIZE, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
+  close(fd);
+
+  //read data
+  double matrix[4][4];
+  double x,y,z;
+  read_shared_data(shm, matrix, &x, &y, &z, &lastversion);
+
+  // 更新数据
+  short color = 1; // 1 for red, 2 for blue
+  update_shared_data(shm, color);
+
   ros::init(argc, argv, "moveit_planning_scene_demo");
   ros::NodeHandle nh;
   ros::AsyncSpinner spinner(1);
@@ -67,19 +146,78 @@ int main(int argc, char **argv){
   // 欧拉角 → 旋转矩阵
   tf2::Matrix3x3 R1;
   tf2::Matrix3x3 R2;
-  R1.setRPY(M_PI, -M_PI/2, 0);
-  R2.setRPY(0, -M_PI/6, 0);
-  block_pp.R_final = R1 * R2;
+
   // 旋转矩阵 → 四元数
   block_pp.R_final.getRotation(block_pp.q);
 
+  auto last_time = std::chrono::high_resolution_clock::now(); // 获取当前高精度时间点
+  int time_diff_ms = 0; // 初始化时间差为0
+
+  while (time_diff_ms <= 2000) {
+  auto now_time = std::chrono::high_resolution_clock::now(); // 获取当前高精度时间点
+  time_diff_ms = std::chrono::duration_cast<std::chrono::milliseconds>(now_time - last_time).count(); // 计算时间差（毫秒）
+  //读取数据
+  double matrix[4][4];
+  uint64_t version;
+  double x,y,z;
+  read_shared_data(shm, matrix, &x, &y, &z, &version);
+  if(version > lastversion)
+  {
+    //updata
+    if(!abs(cmes.matrix[0][3]) < 0.01 && !abs(cmes.matrix[1][3]) < 0.01 &&! !abs(cmes.matrix[2][3]) < 0.01)
+    {
+      for(int i = 0;i < 4;i++)
+      {
+        for(int j = 0;j < 4;j++)
+        {
+          cmes.matrix[i][j]= matrix[i][j];
+        }
+      }
+      cmes.position_center[0] = x;
+      cmes.position_center[1] = y;
+      cmes.position_center[2] = z;
+    }
+    else{
+      for(int i = 0;i < 4;i++)
+      {
+        for(int j = 0;j < 4;j++)
+        {
+          cmes.matrix[i][j]= matrix[i][j]*0.1 +cmes.matrix[i][j]*0.9;
+        }
+      }
+      cmes.position_center[0] = x*0.1 + cmes.position_center[0]*0.9;
+      cmes.position_center[1] = y*0.1 + cmes.position_center[1]*0.9;
+      cmes.position_center[2] = z*0.1 + cmes.position_center[2]*0.9;
+    }
+  }
+
+  // std::cout << "Matrix: " << std::endl;
+  // for (int i = 0; i < 4; ++i) {
+  //     for (int j = 0; j < 4; ++j) {
+  //         std::cout << matrix[i][j] << " ";
+  //     }
+  //     std::cout << std::endl;
+  // }
+  // std::cout<<x<<" "<<y<<" "<<z<<std::endl;
+  }
+
+  R1.setRPY(M_PI, -M_PI/2, 0);
+  for (int i = 0; i < 3; ++i) {
+      for (int j = 0; j < 3; ++j) {
+          R2[i][j] = cmes.matrix[i][j];
+          ROS_INFO("R2[%d][%d]:%f \n",i,j,R2[i][j]);
+      }
+  }
+  // R2.setRPY(0, 0/*-M_PI/6*/, 0);
+  block_pp.R_final = R1 * R2;
+
   block_pp.distance = 0.4;
-  block_pp.position_x = 0.800;
-  block_pp.position_y = 0.000;
-  block_pp.position_z = 0.100;
-  block_pp.position_x_near = 0.800 - 0.001 * 1.732;
-  block_pp.position_y_near = 0.000;
-  block_pp.position_z_near = 0.100 + 0.001;
+  block_pp.position_x = cmes.position_center[2]/1000.0-0.220+0.440-0.2;
+  block_pp.position_y = -cmes.position_center[1]/1000.0-0.017;
+  block_pp.position_z = cmes.position_center[0]/1000.0+0.34;
+  block_pp.position_x_near = cmes.matrix[2][3]/1000.0-0.220+0.440-0.2;
+  block_pp.position_y_near = -cmes.matrix[1][3]/1000.0-0.017;
+  block_pp.position_z_near = cmes.matrix[0][3]/1000.0+0.34;
   double temp = sqrt((block_pp.position_x - block_pp.position_x_near)*(block_pp.position_x - block_pp.position_x_near) + 
         (block_pp.position_y - block_pp.position_y_near)*(block_pp.position_y - block_pp.position_y_near) + 
         (block_pp.position_z - block_pp.position_z_near)*(block_pp.position_z - block_pp.position_z_near));
@@ -88,6 +226,13 @@ int main(int argc, char **argv){
   arm_pp.position_x = block_pp.position_x + (block_pp.position_x_near - block_pp.position_x) / temp * block_pp.distance;
   arm_pp.position_y = block_pp.position_y + (block_pp.position_y_near - block_pp.position_y) / temp * block_pp.distance;
   arm_pp.position_z = block_pp.position_z + (block_pp.position_z_near - block_pp.position_z) / temp * block_pp.distance;
+  ROS_INFO("temp:%f \n",temp);
+  ROS_INFO("block_pp.position_x:%f \n",block_pp.position_x);
+  ROS_INFO("block_pp.position_y:%f \n",block_pp.position_y);
+  ROS_INFO("block_pp.position_z:%f \n",block_pp.position_z);
+  ROS_INFO("block_pp.position_x_near:%f \n",block_pp.position_x_near);
+  ROS_INFO("block_pp.position_y_near:%f \n",block_pp.position_y_near);
+  ROS_INFO("block_pp.position_z_near:%f \n",block_pp.position_z_near);
   ROS_INFO("arm_pp.position_x:%f \n",arm_pp.position_x);
   ROS_INFO("arm_pp.position_y:%f \n",arm_pp.position_y);
   ROS_INFO("arm_pp.position_z:%f \n",arm_pp.position_z);
@@ -149,14 +294,14 @@ int main(int argc, char **argv){
   // std::vector<std::string> object_ids;
   // object_ids.push_back(box_object.id);
   // scene.removeCollisionObjects(object_ids);
-  
+
   //5s延时
   sleep(5);
 
-  //机械臂回到初始home位置
-  ROS_INFO("Moving to pose: home");
-  arm.setNamedTarget("home");
-  arm.move();
+  // //机械臂回到初始home位置
+  // ROS_INFO("Moving to pose: home");
+  // arm.setNamedTarget("home");
+  // arm.move();
 
   //结束节点运行
   ros::shutdown();

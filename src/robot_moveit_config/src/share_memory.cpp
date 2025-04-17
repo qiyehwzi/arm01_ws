@@ -9,8 +9,9 @@
 
 struct SharedData{
     pthread_mutex_t mutex;       // 互斥锁确保独占访问
-    double matrix[4][4];          // 4x4变换矩阵
+    double matrix[4][4];         // 4x4变换矩阵
     short color;                 // 我方颜色
+    double x,y,z;                //
     uint64_t version;            // 版本号
 };
 
@@ -32,13 +33,20 @@ void update_shared_data(
 void read_shared_data(
     SharedData* data,
     double out_matrix[4][4],
+    double* x,
+    double* y,
+    double* z,
     uint64_t* out_version
 ) {
     pthread_mutex_lock(&data->mutex);
     memcpy(out_matrix, data->matrix, sizeof(double[4][4]));
     *out_version = data->version;
+    *x = data->x;
+    *y = data->y;
+    *z = data->z;
     pthread_mutex_unlock(&data->mutex);
 }
+
 int main() {
     int fd = -1;
     while(fd == -1) {
@@ -47,6 +55,7 @@ int main() {
             std::cerr << "Failed to create shared memory." << std::endl;
         }
     }
+    //fd = shm_open(SHM_NAME, O_CREAT | O_RDWR, 0666);
     SharedData* shm = (SharedData*)mmap(NULL, SHM_SIZE, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
     close(fd);
 
@@ -59,7 +68,8 @@ int main() {
         //读取数据
         double matrix[4][4];
         uint64_t version;
-        read_shared_data(shm, matrix, &version);
+        double x,y,z;
+        read_shared_data(shm, matrix, &x, &y, &z, &version);
         std::cout << "Matrix: " << std::endl;
         for (int i = 0; i < 4; ++i) {
             for (int j = 0; j < 4; ++j) {
@@ -67,6 +77,7 @@ int main() {
             }
             std::cout << std::endl;
         }
+        std::cout<<x<<" "<<y<<" "<<z<<std::endl;
     }
 
     //释放共享内存调用

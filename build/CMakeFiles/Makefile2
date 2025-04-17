@@ -139,7 +139,6 @@ gtest/googletest/clean: gtest/googletest/CMakeFiles/gtest.dir/clean
 # Directory level rules for directory robot_moveit_config
 
 # Recursive "all" directory target.
-robot_moveit_config/all: robot_moveit_config/CMakeFiles/share_memory.dir/all
 robot_moveit_config/all: robot_moveit_config/CMakeFiles/moveit_planning_scene_demo.dir/all
 robot_moveit_config/all: robot_moveit_config/CMakeFiles/trajectory_plan_z_up.dir/all
 robot_moveit_config/all: robot_moveit_config/CMakeFiles/trajectory_plan_z_down.dir/all
@@ -154,7 +153,6 @@ robot_moveit_config/preinstall:
 .PHONY : robot_moveit_config/preinstall
 
 # Recursive "clean" directory target.
-robot_moveit_config/clean: robot_moveit_config/CMakeFiles/share_memory.dir/clean
 robot_moveit_config/clean: robot_moveit_config/CMakeFiles/moveit_planning_scene_demo.dir/clean
 robot_moveit_config/clean: robot_moveit_config/CMakeFiles/trajectory_plan_z_up.dir/clean
 robot_moveit_config/clean: robot_moveit_config/CMakeFiles/trajectory_plan_z_down.dir/clean
@@ -541,33 +539,6 @@ tjurm_arm_final/CMakeFiles/_catkin_empty_exported_target.dir/clean:
 .PHONY : tjurm_arm_final/CMakeFiles/_catkin_empty_exported_target.dir/clean
 
 #=============================================================================
-# Target rules for target robot_moveit_config/CMakeFiles/share_memory.dir
-
-# All Build rule for target.
-robot_moveit_config/CMakeFiles/share_memory.dir/all:
-	$(MAKE) -f robot_moveit_config/CMakeFiles/share_memory.dir/build.make robot_moveit_config/CMakeFiles/share_memory.dir/depend
-	$(MAKE) -f robot_moveit_config/CMakeFiles/share_memory.dir/build.make robot_moveit_config/CMakeFiles/share_memory.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/tjurm/arm01_ws/build/CMakeFiles --progress-num=15,16 "Built target share_memory"
-.PHONY : robot_moveit_config/CMakeFiles/share_memory.dir/all
-
-# Build rule for subdir invocation for target.
-robot_moveit_config/CMakeFiles/share_memory.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/tjurm/arm01_ws/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 robot_moveit_config/CMakeFiles/share_memory.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/tjurm/arm01_ws/build/CMakeFiles 0
-.PHONY : robot_moveit_config/CMakeFiles/share_memory.dir/rule
-
-# Convenience name for target.
-share_memory: robot_moveit_config/CMakeFiles/share_memory.dir/rule
-
-.PHONY : share_memory
-
-# clean rule for target.
-robot_moveit_config/CMakeFiles/share_memory.dir/clean:
-	$(MAKE) -f robot_moveit_config/CMakeFiles/share_memory.dir/build.make robot_moveit_config/CMakeFiles/share_memory.dir/clean
-.PHONY : robot_moveit_config/CMakeFiles/share_memory.dir/clean
-
-#=============================================================================
 # Target rules for target robot_moveit_config/CMakeFiles/moveit_planning_scene_demo.dir
 
 # All Build rule for target.
@@ -601,7 +572,7 @@ robot_moveit_config/CMakeFiles/moveit_planning_scene_demo.dir/clean:
 robot_moveit_config/CMakeFiles/trajectory_plan_z_up.dir/all:
 	$(MAKE) -f robot_moveit_config/CMakeFiles/trajectory_plan_z_up.dir/build.make robot_moveit_config/CMakeFiles/trajectory_plan_z_up.dir/depend
 	$(MAKE) -f robot_moveit_config/CMakeFiles/trajectory_plan_z_up.dir/build.make robot_moveit_config/CMakeFiles/trajectory_plan_z_up.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/tjurm/arm01_ws/build/CMakeFiles --progress-num=19,20 "Built target trajectory_plan_z_up"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/tjurm/arm01_ws/build/CMakeFiles --progress-num=17,18 "Built target trajectory_plan_z_up"
 .PHONY : robot_moveit_config/CMakeFiles/trajectory_plan_z_up.dir/all
 
 # Build rule for subdir invocation for target.
@@ -628,7 +599,7 @@ robot_moveit_config/CMakeFiles/trajectory_plan_z_up.dir/clean:
 robot_moveit_config/CMakeFiles/trajectory_plan_z_down.dir/all:
 	$(MAKE) -f robot_moveit_config/CMakeFiles/trajectory_plan_z_down.dir/build.make robot_moveit_config/CMakeFiles/trajectory_plan_z_down.dir/depend
 	$(MAKE) -f robot_moveit_config/CMakeFiles/trajectory_plan_z_down.dir/build.make robot_moveit_config/CMakeFiles/trajectory_plan_z_down.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/tjurm/arm01_ws/build/CMakeFiles --progress-num=17,18 "Built target trajectory_plan_z_down"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/tjurm/arm01_ws/build/CMakeFiles --progress-num=15,16 "Built target trajectory_plan_z_down"
 .PHONY : robot_moveit_config/CMakeFiles/trajectory_plan_z_down.dir/all
 
 # Build rule for subdir invocation for target.

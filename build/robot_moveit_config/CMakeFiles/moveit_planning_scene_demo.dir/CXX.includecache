@@ -23,6 +23,22 @@ tf2/LinearMath/Quaternion.h
 -
 tf2/LinearMath/Matrix3x3.h
 -
+sys/mman.h
+-
+sys/stat.h
+-
+fcntl.h
+-
+unistd.h
+-
+pthread.h
+-
+string.h
+-
+stdint.h
+-
+ctime
+-
 
 /opt/ros/noetic/include/actionlib/action_definition.h
 

@@ -45,8 +45,8 @@ add_executable(trajectory_plan_z_up src/trajectory_plan_z_up.cpp)
 target_link_libraries(trajectory_plan_z_up ${catkin_LIBRARIES})
 
 add_executable(moveit_planning_scene_demo src/moveit_planning_scene_demo.cpp)
-target_link_libraries(moveit_planning_scene_demo ${catkin_LIBRARIES})
+target_link_libraries(moveit_planning_scene_demo ${catkin_LIBRARIES} rt pthread)
 
-add_executable(share_memory src/share_memory.cpp)
-target_link_libraries(share_memory ${catkin_LIBRARIES} rt pthread)
+# add_executable(share_memory src/share_memory.cpp)
+# target_link_libraries(share_memory ${catkin_LIBRARIES} rt pthread)
 

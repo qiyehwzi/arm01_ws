@@ -1,2 +1,2 @@
 robot_moveit_config:tjurm_arm_final
--DCATKIN_DEVEL_PREFIX=/home/tjurm/arm01_ws/devel -DCMAKE_INSTALL_PREFIX=/home/tjurm/arm01_ws/install -G Unix Makefiles
+-DCMAKE_BUILD_TYPE=Debug -DCATKIN_DEVEL_PREFIX=/home/tjurm/arm01_ws/devel -DCMAKE_INSTALL_PREFIX=/home/tjurm/arm01_ws/install -G Unix Makefiles
